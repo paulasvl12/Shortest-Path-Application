@@ -1,0 +1,80 @@
+
+import java.util.*;
+public class Dijkstra1 {
+
+    public class Node {
+        private String name;
+        private int weight;
+
+        public Node(Integer w, String n){
+            weight = w;
+            name = n;
+        }
+
+
+    }
+
+
+    public static void dijkstra(int[][] graph, int sourceVertex, int destination){
+        LinkedList<Integer> shortestPath = new LinkedList();
+
+        int vertexCount = graph.length;
+        boolean[] visitedVertex = new boolean[vertexCount];
+        int[] distance = new int[vertexCount];
+        for (int i = 0; i < vertexCount; i++){
+            visitedVertex[i] = false;
+            distance[i] = Integer.MAX_VALUE;
+        }
+        distance[sourceVertex] = 0; // distance of source vertex to itself is zero
+        for (int i = 0; i < vertexCount; i++){
+            //find the neighbouring unvisited vertex having  minimum distance from source vertex
+            //for the first time u will be the source vertex and the distance array will be updated with the neighbouring vertex distance of source vertex
+            int u = findMinDistance(distance, visitedVertex);
+            //u is the row and v is the column
+            visitedVertex[u] = true;
+            //now update all the neighbour vertex distances
+            for (int v =0 ; v < vertexCount; v++){
+                //graph[u][v] != 0 -> there should be a direct edge
+                if(!visitedVertex[v] && graph[u][v] != 0 && (distance[u] + graph[u][v] < distance[v])){
+                    distance[v] = distance[u] + graph[u][v];
+                    shortestPath.add(distance[u]);
+                }
+            }
+        }
+        shortestPath.add(destination);
+        /*for(int i =0; i < vertexCount; i++){
+            System.out.println(String.format("Distance from source vertex " + sourceVertex + distance[i]));
+        }*/
+           // System.out.println(String.format("Distance from source vertex " + sourceVertex + distance[u]));
+        for(int i=0; i < shortestPath.size(); i++){
+            System.out.println(shortestPath.get(i));
+        }
+        System.out.println(String.format("Distance from source vertex " + sourceVertex + " to destination " + destination +
+                " is " +  distance[destination]));
+
+    }
+
+    private static int findMinDistance(int[] distance, boolean[] visitedVertex) {
+        int minDistance = Integer.MAX_VALUE;
+        int minDistanceVertex = -1;
+        for (int i =0; i < distance.length; i++){
+            //the vertex should not be visited and the distance should be the minimum.
+            //this is similar to finding the min element of an array
+            if(!visitedVertex[i] && distance[i] < minDistance){
+                minDistance = distance[i];
+                minDistanceVertex = i;
+            }
+        }
+        return minDistanceVertex;
+    }
+
+    public static void main(String[] args) {
+        int graph[][] = new int[][] { { 0, 2, 2, 3, 0 },
+                                      { 2, 0, 3, 2, 0 },
+                                      { 2, 3, 0, 2, 0},
+                                      { 3, 2, 2, 0, 3 },
+                                      { 0, 0, 0, 3, 0 } };
+        Dijkstra1 t = new Dijkstra1();
+        t.dijkstra(graph, 0,4);
+    }
+}
