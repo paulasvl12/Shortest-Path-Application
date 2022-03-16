@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 public class UnitTest {
    public static void main(String[] args) {
-     
+     Graph g = new Graph();
    }
   
 }
