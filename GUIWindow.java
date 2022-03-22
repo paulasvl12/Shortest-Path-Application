@@ -77,13 +77,12 @@ public class GUIWindow {
             });
 
             // Instruction box
-            String html = "<html><body style='width: %1spx'>%1s";
-            JLabel instructions = new JLabel("Select Algorithm from dropdown menu. Left click to select source and endpoint. "
-            + "Source is green, endpoint is red. Drag with left click to place obstacle. Obstacles are orange. Left click to de-select. " +
-                    "Click start.");
+            Border blackline = BorderFactory.createLineBorder(Color.black);
+            JLabel instructions = new JLabel("<html>Select Algorithm from dropdown menu. Left click to select source and endpoint. Source is green, endpoint is red. Drag with left click to place obstacle. Obstacles are orange. Left click to de-select. Click start.</html>");
             instructions.setPreferredSize(new Dimension(300, 500));
+            instructions.setBorder(blackline);
             instructions.setBackground(Color.lightGray);
-            window.add(String.format(html,300,instructions), BorderLayout.WEST);
+            window.add(instructions, BorderLayout.EAST);
 
 
 
