@@ -29,9 +29,9 @@ public class GUIWindow {
         int width = 400;
         int height = 400;
 
-        int ans = (width / x) % 30;
-        int ans1 = (height / y) % 30;
-        return ans1;
+        int ans = (x % width ) /30 ;
+        int ans1 = (height / y);
+        return ans;
 
     }
 
