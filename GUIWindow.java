@@ -22,6 +22,18 @@ public class GUIWindow {
                     g.drawRect(x, y, 30, 30);
         }
     }
+    public static int translateToCell(int x, int y){
+        int xOrigin = 30;
+        int yOrigin = 30;
+
+        int width = 400;
+        int height = 400;
+
+        int ans = (width / x) % 30;
+        int ans1 = (height / y) % 30;
+        return ans1;
+
+    }
 
         public static void main(String[] args) {
             JFrame window = new JFrame("Shortest Path Application");
@@ -70,6 +82,8 @@ public class GUIWindow {
                     int y = e.getY();
                     // So that we can see on the console where the user is clicking
                     System.out.println(x + "," + y);
+                    int cell = translateToCell(x,y);
+                    System.out.println(cell);
 
                 }
 
