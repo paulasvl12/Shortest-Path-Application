@@ -78,7 +78,7 @@ public class GUIWindow {
 
             // Instruction box
             Border blackline = BorderFactory.createLineBorder(Color.black);
-            JLabel instructions = new JLabel("<html>Select Algorithm from dropdown menu. Left click to select source and endpoint. Source is green, endpoint is red. Drag with left click to place obstacle. Obstacles are orange. Left click to de-select. Click start.</html>");
+            JLabel instructions = new JLabel("<html>Select Algorithm from dropdown menu. Left click to select source and endpoint. Source is green, endpoint is red. Drag with left click to place obstacle. Obstacles are orange. Left click to de-select. Click start.</html>", SwingConstants.CENTER);
             instructions.setPreferredSize(new Dimension(300, 500));
             instructions.setBorder(blackline);
             instructions.setBackground(Color.lightGray);
