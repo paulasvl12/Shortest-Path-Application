@@ -51,6 +51,10 @@ public class GUIWindow {
             //reset button
             JButton resetButton = new JButton("Reset");
             resetButton.setBounds(50,100,95,30); 
+            JPanel buttons = new JPanel();
+            buttons.add(startButton);
+            buttons.add(resetButton);
+            
 
             //grid cell
             /*JPanel grid = new JPanel();
@@ -78,10 +82,8 @@ public class GUIWindow {
             JPanel menuWrapper = new JPanel();
             menuWrapper.add(dropdown_menu);
             window.add(menuWrapper, BorderLayout.NORTH);
-            //add start button
-            window.add(startButton, BorderLayout.SOUTH);
-            //add reset button
-            window.add(resetButton, BorderLayout.SOUTH);
+            //add start button and reset button
+            window.add(buttons, BorderLayout.SOUTH);
             Grid cells = new Grid();
             window.add(cells);
             cells.addMouseListener(new MouseAdapter() {
