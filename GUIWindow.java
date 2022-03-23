@@ -17,9 +17,9 @@ public class GUIWindow {
         }
 
         public void paint(Graphics g) {
-            for (int x = 30; x <= 150; x += 30)
-                for (int y = 30; y <= 150; y += 30)
-                    g.drawRect(x, y, 30, 30);
+            for (int x = 30; x <= 30*cols; x += 30)
+                for (int y = 30; y <= 30*rows; y += 30)
+                    g.drawRect(x,y, 30, 30);
         }
     }
     public static int translateToCell(int x, int y){
