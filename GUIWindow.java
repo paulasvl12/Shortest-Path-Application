@@ -46,7 +46,13 @@ public class GUIWindow {
             //holds the name of the algorithm the user wants to use
             String algorithm_selected = dropdown_menu.getItemAt(dropdown_menu.getSelectedIndex()).toString();
             // This wrapper ensures that the dropdown menu does not take up entire screen space
-
+            
+            //start button
+            JButton startButton = new JButton("Start");
+            startButton.setBounds(50,100,95,30); 
+            //reset button
+            JButton resetButton = new JButton("Reset");
+            resetButton.setBounds(50,100,95,30); 
 
             //grid cell
             /*JPanel grid = new JPanel();
@@ -74,7 +80,10 @@ public class GUIWindow {
             JPanel menuWrapper = new JPanel();
             menuWrapper.add(dropdown_menu);
             window.add(menuWrapper, BorderLayout.NORTH);
-
+            //add start button
+            window.add(startButton, BorderLayout.SOUTH);
+            //add reset button
+            window.add(resetButton, BorderLayout.SOUTH);
             Grid cells = new Grid();
             window.add(cells);
             cells.addMouseListener(new MouseAdapter() {
