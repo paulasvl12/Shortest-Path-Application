@@ -30,7 +30,9 @@ public class GUIWindow {
         int height = 400;
 
         int ans = (x % width ) /30 ;
-        int ans1 = (height / y);
+        // idea: if click was on second row and beyond : add the result in ans (cell) plus whatever number
+        // (0-6) the cell is
+        int ans1 = ans + (x % width ) /30;
         return ans;
 
     }
