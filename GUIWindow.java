@@ -29,12 +29,22 @@ public class GUIWindow {
         int width = 400;
         int height = 400;
 
-        int ans = (x % width ) /30 ;
+        int ansX = ((x % width ) /30) -1 ;
         // idea: if click was on second row and beyond : add the result in ans (cell) plus whatever number
         // (0-6) the cell is
-        int ans1 = ans + (x % width ) /30;
-        return ans;
+        int ansY = ((y % height) / 30) -1;
+        // int counter = 0;
+        int cellNumber = 0;
 
+
+        if(ansY > 0 ){
+            cellNumber = cols*ansY + ansX;
+        }
+        else {
+            return ansX;
+        }
+
+        return cellNumber;
     }
 
         public static void main(String[] args) {
