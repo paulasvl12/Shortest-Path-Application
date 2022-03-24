@@ -8,8 +8,7 @@ public class Node
            private String gridCoor; //how we will connect it to our visual represenation
            private Integer distance; //used for dijstar and other weighted graphs
            private int id; //number associated with the matrix?
-           public int heuristicCost;//cost from current node to final node
-           public int finalCost;//total cost from start node to final node
+          
            
             
       	  public Node()
