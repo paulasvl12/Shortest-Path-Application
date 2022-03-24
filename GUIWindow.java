@@ -109,7 +109,7 @@ public class GUIWindow {
                     int x = e.getX();
                     int y = e.getY();
                     // So that we can see on the console where the user is clicking
-                    System.out.println(x + "," + y);
+                    //System.out.println(x + "," + y);
                     int cell = translateToCell(x,y);
                     System.out.println(cell);
 
@@ -124,6 +124,7 @@ public class GUIWindow {
             instructions.setPreferredSize(new Dimension(300, 500));
             instructions.setBorder(blackline);
             instructions.setBackground(Color.lightGray);
+            //instructions.setAlignment(Pos.TOP_CENTER);
             window.add(instructions, BorderLayout.EAST);
 
 
