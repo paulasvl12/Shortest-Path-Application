@@ -60,12 +60,15 @@ public class GUIWindow {
             //start button
             JButton startButton = new JButton("Start");
             startButton.setBounds(50,100,95,30); 
+          
             //reset button
             JButton resetButton = new JButton("Reset");
             resetButton.setBounds(50,100,95,30);
+    
             //resize button
             JButton resizeButton = new JButton("Resize");
             resizeButton.setBounds(50,100,95,30);
+        
               
             JPanel buttons = new JPanel();
             buttons.add(startButton);
@@ -114,21 +117,23 @@ public class GUIWindow {
                     System.out.println(cell);
 
                 }
-
+                
 
             });
-
+            
+            
             // Instruction box
             Border blackline = BorderFactory.createLineBorder(Color.black);
             JLabel instructions = new JLabel("<html>Select Algorithm from dropdown menu. Left click to select source and endpoint. Source is green, endpoint is red. Drag with left click to place obstacle. Obstacles are orange. Left click to de-select. Click start.</html>", SwingConstants.CENTER);
             instructions.setPreferredSize(new Dimension(300, 500));
             instructions.setBorder(blackline);
             instructions.setBackground(Color.lightGray);
-            //instructions.setAlignment(Pos.TOP_CENTER);
+            //instructions.setAlignment(Pos.NORTH);
             window.add(instructions, BorderLayout.EAST);
 
 
 
 
     }
+    
 }
