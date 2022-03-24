@@ -1,21 +1,24 @@
 
+
 import java.util.*;
-public class Dijkstra1 {
+public class Dijkstra1 extends Graph{
 
-    public class Node {
+    public static class Node {
         private String name;
-        private int weight;
+        private int distance;
 
-        public Node(Integer w, String n){
-            weight = w;
+        public Node(Integer d, String n){
+            distance = d;
             name = n;
         }
 
-
+        public int getDistance() {
+            return distance;
+        }
     }
 
 
-    public static void dijkstra(int[][] graph, int sourceVertex, int destination){
+    public static void dijkstra(Node[][] graph, int sourceVertex, int destination){
         LinkedList<Integer> shortestPath = new LinkedList();
 
         int vertexCount = graph.length;
@@ -35,8 +38,9 @@ public class Dijkstra1 {
             //now update all the neighbour vertex distances
             for (int v =0 ; v < vertexCount; v++){
                 //graph[u][v] != 0 -> there should be a direct edge
-                if(!visitedVertex[v] && graph[u][v] != 0 && (distance[u] + graph[u][v] < distance[v])){
-                    distance[v] = distance[u] + graph[u][v];
+                // now that 'u' holds the row where the min distance was found, 'v' is used to find the column
+                if(!visitedVertex[v] && graph[u][v].getDistance() != 0 && (distance[u] + graph[u][v].getDistance() < distance[v])){
+                    distance[v] = distance[u] + graph[u][v].getDistance();
                     shortestPath.add(distance[u]);
                 }
             }
@@ -69,11 +73,13 @@ public class Dijkstra1 {
     }
 
     public static void main(String[] args) {
-        int graph[][] = new int[][] { { 0, 2, 2, 3, 0 },
-                                      { 2, 0, 3, 2, 0 },
-                                      { 2, 3, 0, 2, 0},
-                                      { 3, 2, 2, 0, 3 },
-                                      { 0, 0, 0, 3, 0 } };
+        Graph g = new Graph();
+        
+        Node graph[][] = new Node[][] { { new Node(0, ""), new Node(2, ""), new Node(2, ""), new Node(3, ""), new Node(0, "") },
+                                      { new Node(2, ""), new Node(0, ""), new Node(3, ""), new Node(2, ""), new Node(0, "") },
+                                      { new Node(2, ""), new Node(3, ""), new Node(0, ""), new Node(2, ""), new Node(0, "")},
+                                      { new Node(3, ""), new Node(2, ""), new Node(2, ""), new Node(0, ""), new Node(3, "") },
+                                      { new Node(0,""), new Node(0, ""), new Node(0, ""), new Node(3, ""), new Node(0, "") } };
         Dijkstra1 t = new Dijkstra1();
         t.dijkstra(graph, 0,4);
     }
