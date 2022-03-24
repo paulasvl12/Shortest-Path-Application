@@ -8,8 +8,6 @@ public class Node
            private String gridCoor; //how we will connect it to our visual represenation
            private int distance; //used for dijstar and other weighted graphs
            private int id; //number associated with the matrix?
-          
-           
             
       	  public Node()
       	  {
