@@ -6,11 +6,12 @@ public class Graph extends Node{
     Node[] nodeMatrix; //to retrieve the nodes from
     Node[][] adjMatrix; // I added this for Dijkstra
     Set<Node> allNodes; //set of all nodes in the graph
+    int allCells = 0; //is the number of cells in a graph
     
     public Graph(LinkedList<Node> adj, Set<Node> s){
       nodes = adj;
       allNodes = s;
-    }
+     }
     public Graph(int[][] m, Node[] n)
     {
        matrix = m;
