@@ -62,10 +62,15 @@ public class GUIWindow {
             startButton.setBounds(50,100,95,30); 
             //reset button
             JButton resetButton = new JButton("Reset");
-            resetButton.setBounds(50,100,95,30); 
+            resetButton.setBounds(50,100,95,30);
+            //resize button
+            JButton resizeButton = new JButton("Resize");
+            resizeButton.setBounds(50,100,95,30);
+              
             JPanel buttons = new JPanel();
             buttons.add(startButton);
             buttons.add(resetButton);
+            buttons.add(resizeButton);
             
 
             //grid cell
