@@ -6,7 +6,7 @@ public class Node
            private Node next;  
            private String state; //start end or obstacle "Start" "End" "Obs" .
            private String gridCoor; //how we will connect it to our visual represenation
-           private Integer distance; //used for dijstar and other weighted graphs
+           private int distance; //used for dijstar and other weighted graphs
            private int id; //number associated with the matrix?
           
            
@@ -30,6 +30,16 @@ public class Node
               gridCoor = coor;
               this.id = id;
               distance = Integer.MAX_VALUE; //sets edges to ininifty
+           }
+           
+           public Node(int dis, int id){
+              distance = dis;
+              visited = false;  //no nodes have been visited yet
+      	     prev  = null;      
+              next = null;
+              state = "";
+              gridCoor = "";
+              this.id = id;
            }
            public String getGridCoor(){
             return gridCoor;
@@ -71,6 +81,11 @@ public class Node
            }
            public void setPrev(Node n){
             prev = n;
+           }
+           
+           public int getDistance()
+           {
+             return distance;
            }
            
            public boolean equals(Node n){
