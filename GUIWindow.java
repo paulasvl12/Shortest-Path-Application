@@ -6,7 +6,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 
-public class GUIWindow {
+public class GUIWindow extends JPanel {
     private static int rows = 5;
     private static int cols = 7;
 
@@ -22,6 +22,7 @@ public class GUIWindow {
                     g.drawRect(x,y, 30, 30);
         }
     }
+    
     public static int translateToCell(int x, int y){
         int xOrigin = 30;
         int yOrigin = 30;
@@ -45,6 +46,38 @@ public class GUIWindow {
         }
 
         return cellNumber;
+    }
+    
+    //this method will be used to color the cell assoicated with it on the graph
+    //input: the cell's id number
+    public void colorCell(int cell){
+       int gridTopX = 33;
+       int gridTopY = 33;
+       int cellX;
+       int cellY;
+       
+       int counter = 0; //row
+       int holder = cell; //column
+       while(holder > 7){
+         holder -= 7; //subtract 7
+         counter++; //increment counter
+       }
+       //once that is done we have the row and column -1 each
+       holder++;
+       counter++;
+       
+       cellX = 33 + (30 *holder);
+       cellY = 33 + (30*counter);
+       
+       //now we have the x and y for the cell we want to color
+       //color it
+       super.paintComponent(g);
+       // cast Graphics to Graphics2D
+        Graphics2D g2 = (Graphics2D) g;
+        g2.drawRect(cellX,cellY,30,30); // drawRect(x-position, y-position, width, height)
+        g2.setColor(Color.blue);
+        g2.fillRect(200,0,100,100); // fill new rectangle with color blue
+       
     }
 
         public static void main(String[] args) {
