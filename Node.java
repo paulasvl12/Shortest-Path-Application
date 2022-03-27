@@ -8,7 +8,7 @@ public class Node
            private String gridCoor; //how we will connect it to our visual represenation
            private int distance; //used for dijstar and other weighted graphs
            private int id; //number associated with the matrix?
-           static int allCells = 0; //number of cells/nodes in graph 
+      
             
       	  public Node()
       	  {
@@ -27,7 +27,7 @@ public class Node
       	     prev  = null;      
               next = null;
               state = type;
-              allCells++;
+              
               gridCoor = coor;
               this.id = id;
               distance = Integer.MAX_VALUE; //sets edges to ininifty
