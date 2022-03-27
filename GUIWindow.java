@@ -11,6 +11,10 @@ import java.awt.Graphics2D;
 public class GUIWindow extends JPanel {
     private static int rows = 5;
     private static int cols = 7;
+    private static int counter = 0; //number of clicks on the grid
+    private static boolean startCell = false; //true means the start has been selected false means it hasn'y
+    private static boolean endCell = false;//true means the end has been selected false means it hasn'y
+    
 
     public static class Grid extends JPanel {
         public Grid() {
@@ -54,11 +58,13 @@ public class GUIWindow extends JPanel {
     
     //this method will be used to color the cell assoicated with it on the graph
     //input: the cell's id number
-    public void colorCell(int cell){
+    public Cell colorCell(int cell, Color color){
        int gridTopX = 33;
        int gridTopY = 33;
        int cellX;
        int cellY;
+       
+       System.out.println("HERE");
        
        int counter = 0; //row
        int holder = cell; //column
@@ -74,38 +80,38 @@ public class GUIWindow extends JPanel {
        cellY = 33 + (30*counter);
        
        //now we have the x and y for the cell we want to color
-       
-       
+       //create the cell
+       Cell cellToColor = new Cell(cellX,cellY, color);
+       return cellToColor;
     }
+    
+    
     //inner class for cell to make and color them
     public static class Cell extends JPanel {
       int x;
       int y;
       Color color;
-    
         public Cell(int x, int y, Color color) {
             this.x = x;
             this.y = y;
             this.color = color;
             setVisible(true);
+            
         }
-
         public void paintComponent(Graphics g) {
+          System.out.println("here");
           super.paintComponent(g);
           Graphics2D g2d = (Graphics2D) g;
-      
           g2d.setColor(color);
           g2d.drawRect(x,y, 30, 30);
-
           g2d.setColor(color);
           g2d.fillRect(x,y,30,30);
-
-             
         }
     }
 
         public static void main(String[] args) {
             JFrame window = new JFrame("Shortest Path Application");
+             window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //end the program when closed
 
             //dropdown menu
             String[] algorithms = {"Select Algorithm", "AStar", "BellmanFord", "Bidirectional Search", "Breadth-First Search", "Dijkstra"};
@@ -125,28 +131,12 @@ public class GUIWindow extends JPanel {
             //resize button
             JButton resizeButton = new JButton("Resize");
             resizeButton.setBounds(50,100,95,30);
-        
               
             JPanel buttons = new JPanel();
             buttons.add(startButton);
             buttons.add(resetButton);
             buttons.add(resizeButton);
             
-
-            //grid cell
-            /*JPanel grid = new JPanel();
-            // Creates outline for the grid cell
-            grid.setBorder(BorderFactory.createLineBorder(Color.black));
-            grid.addMouseListener(new MouseAdapter() {
-                @Override
-                public void mousePressed(MouseEvent e) {
-                    int x = e.getX();
-                    int y = e.getY();
-                    // So that we can see on the console where the user is clicking
-                    System.out.println(x + "," + y);
-
-                }
-            });*/
 
 
             //BorderLayout gives a north, south, west, east layout for the screen
@@ -163,21 +153,39 @@ public class GUIWindow extends JPanel {
             window.add(buttons, BorderLayout.SOUTH);
             Grid cells = new Grid();
             window.add(cells);
+           
+            
             cells.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mousePressed(MouseEvent e) {
+                
+               
                     int x = e.getX();
                     int y = e.getY();
                     // So that we can see on the console where the user is clicking
                     //System.out.println(x + "," + y);
                     int cell = translateToCell(x,y);
                     System.out.println(cell);
+                    GUIWindow cellClicked = new GUIWindow();
+                    Cell currentCell;
+                    if(startCell == false)
+                    {
+                     counter++;
+                     startCell = true;
+                     currentCell = cellClicked.colorCell(cell, Color.GREEN);
+                    }
+                    else if(endCell == false){
+                     counter++;
+                     endCell = true;
+                     currentCell = cellClicked.colorCell(cell, Color.RED);
+                    }
+                    else{
+                     counter++;
+                     currentCell = cellClicked.colorCell(cell, Color.ORANGE);
+                    }
 
                 }
-                
-
             });
-            
             
             // Instruction box
             Border blackline = BorderFactory.createLineBorder(Color.black);
