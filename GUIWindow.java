@@ -4,7 +4,9 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 
 public class GUIWindow extends JPanel {
     private static int rows = 5;
@@ -48,6 +50,8 @@ public class GUIWindow extends JPanel {
         return cellNumber;
     }
     
+    
+    
     //this method will be used to color the cell assoicated with it on the graph
     //input: the cell's id number
     public void colorCell(int cell){
@@ -70,14 +74,34 @@ public class GUIWindow extends JPanel {
        cellY = 33 + (30*counter);
        
        //now we have the x and y for the cell we want to color
-       //color it
-       super.paintComponent(g);
-       // cast Graphics to Graphics2D
-        Graphics2D g2 = (Graphics2D) g;
-        g2.drawRect(cellX,cellY,30,30); // drawRect(x-position, y-position, width, height)
-        g2.setColor(Color.blue);
-        g2.fillRect(200,0,100,100); // fill new rectangle with color blue
        
+       
+    }
+    //inner class for cell to make and color them
+    public static class Cell extends JPanel {
+      int x;
+      int y;
+      Color color;
+    
+        public Cell(int x, int y, Color color) {
+            this.x = x;
+            this.y = y;
+            this.color = color;
+            setVisible(true);
+        }
+
+        public void paintComponent(Graphics g) {
+          super.paintComponent(g);
+          Graphics2D g2d = (Graphics2D) g;
+      
+          g2d.setColor(color);
+          g2d.drawRect(x,y, 30, 30);
+
+          g2d.setColor(color);
+          g2d.fillRect(x,y,30,30);
+
+             
+        }
     }
 
         public static void main(String[] args) {
