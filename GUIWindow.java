@@ -239,7 +239,16 @@ public class GUIWindow extends JPanel {
              cells.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mousePressed(MouseEvent e) {
-                
+                //right click
+                if(e.isMetaDown()){
+                  //get the state of the node and store it
+                  //if it was start or end reset the boolean for selected
+                  //counter--;
+                  
+                  //reset the state of associated node to ""
+                  //color the cell white again/remove the color
+                  
+                }
                 
                 }
             });
