@@ -110,7 +110,8 @@ public class GUIWindow extends JPanel {
         }
         
     }
-
+    
+    
         public static void main(String[] args) {
             JFrame window = new JFrame("Shortest Path Application");
              window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //end the program when closed
@@ -169,24 +170,61 @@ public class GUIWindow extends JPanel {
                     System.out.println(cell);
                     
                     GUIWindow cellClicked = new GUIWindow();
-                    Cell currentCell = cellClicked.colorCell(cell, Color.GREEN);
+                    //if they haven't selected a start
                     if(startCell == false)
                     {
+                    //set the state of the node in the graph to Start
+                    //add to counter (they have selected something)
                      counter++;
+                     //set that the start has now been selected
                      startCell = true;
+                     //color in the cell green
                      currentCell = cellClicked.colorCell(cell, Color.GREEN);
                     }
+                    //if they already had a start but not an end
                     else if(endCell == false){
+                    //set the state of the node in the graph to End
+                    //add to counter (they have selected something)
                      counter++;
+                     //set that they have selected a start
                      endCell = true;
+                     //color the cell red
                      currentCell = cellClicked.colorCell(cell, Color.RED);
                     }
+                    //already have start and end
                     else{
+                    //set the state of the node in the graph to Obs
+                    //add to counter (they have selected something)
                      counter++;
+                     //color in the cell orange
                      currentCell = cellClicked.colorCell(cell, Color.ORANGE);
                     }
-
                 }
+            });
+            
+            //did they click the reset button
+            
+            resetButton.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mousePressed(MouseEvent e) {
+                 //reset dropdown menu
+                 dropdown_menu.setSelectedIndex(0);
+                 //reset the grid
+                 window.remove(cells);
+                 Grid cells2 = new Grid();
+                 window.add(cells2);
+
+                  //reset all points on the graph
+                  
+                  //reset the counter start and end varibales
+                  counter = 0;
+                  startCell = false; 
+                  endCell = false;
+                  rows = 5;
+                  cols = 7;
+  
+
+                  }
             });
             
             // Instruction box
@@ -197,9 +235,6 @@ public class GUIWindow extends JPanel {
             instructions.setBackground(Color.lightGray);
             //instructions.setAlignment(Pos.NORTH);
             window.add(instructions, BorderLayout.EAST);
-
-
-
 
     }
     
