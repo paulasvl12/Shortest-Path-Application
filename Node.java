@@ -15,19 +15,18 @@ public class Node
       	     prev  = null;      
               next = null;
               state = "";
-              gridCoor = "";
+              
               distance = Integer.MAX_VALUE; //sets edges to ininifty
-              allCells++;
+             
       	  }
            
-           public Node(String type, String coor, int id)
+           public Node(String type, int id)
            {
               visited = false;  //no nodes have been visited yet
       	     prev  = null;      
               next = null;
               state = type;
               
-              gridCoor = coor;
               this.id = id;
               distance = Integer.MAX_VALUE; //sets edges to ininifty
            }
@@ -38,8 +37,6 @@ public class Node
       	     prev  = null;      
               next = null;
               state = "";
-              allCells++;
-              gridCoor = "";
               this.id = id;
            }
            
@@ -84,7 +81,7 @@ public class Node
            }
            
            public boolean equals(Node n){
-            if(this.visited == n.visited && this.state.equals(n.state) && this.gridCoor.equals(n.gridCoor))
+            if(this.visited == n.visited && this.state.equals(n.state) && this.id== n.id)
                return true;
             else
                return false;

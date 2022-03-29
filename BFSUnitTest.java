@@ -5,7 +5,7 @@ public class BFSUnitTest{
    public static void main(String[] args) {
    //positive test cases
       //test 1 - example from class there are 5 nodes and only 1 path avaible
-        Node start = new Node("Start", 0);
+       /* Node start = new Node("Start", 0);
         Node end = new Node("End", 4);
         Node n = new Node("", 1);
         Node n2 = new Node("", 2);
@@ -42,15 +42,15 @@ public class BFSUnitTest{
         group.add(list4);
         
         Graph g = new Graph(group);
-        g.getAdjList();
         BreadthFirstSearch bfs = new BreadthFirstSearch();
         bfs.traversal(start, end, g);
+        */
       //test 2 - there are multiple paths to reach the destination all of the same length
          Node t2start = new Node("Start", 1);
          Node t2end = new Node("End", 7);
          Node t2n0 = new Node("", 0);
          Node t2n2 = new Node("", 2);
-         Node t2n3 = new Node("", 3);
+         Node t2n3 = new Node("Obs", 3);
          Node t2n4 = new Node("Obs", 4);
          Node t2n5 = new Node("", 5);
          Node t2n6 = new Node("", 6);
@@ -66,6 +66,10 @@ public class BFSUnitTest{
          t2list1.add(t2n3);
          t2list1.add(t2n4); //obs
          t2list1.add(t2n5);
+         LinkedList<Node> t2list2 = new LinkedList<Node>();
+         t2list2.add(t2start);
+         t2list2.add(t2n4); //obs
+         t2list2.add(t2n5);
          LinkedList<Node> t2list3 = new LinkedList<Node>();
          t2list3.add(t2n0); 
          t2list3.add(t2start);
@@ -101,17 +105,19 @@ public class BFSUnitTest{
          t2list8.add(t2n5);
          t2list8.add(t2end);
          t2list8.add(t2n4); //obs
-         ArrayList<LinkedList<Node>> t2adjList = new ArrayList<LinkedList<Node>>();
-         t2adjList.add(t2list0);
-         t2adjList.add(t2list1);
-         t2adjList.add(t2list2);
-         t2adjList.add(t2list3);
-         t2adjList.add(t2list4);
-         t2adjList.add(t2list5);
-         t2adjList.add(t2list6);
-         t2adjList.add(t2list7);
-         t2adjList.add(t2list8);
-
+         ArrayList<LinkedList<Node>> t2AdjList = new ArrayList<LinkedList<Node>>();
+         t2AdjList.add(t2list0);
+         t2AdjList.add(t2list1);
+         t2AdjList.add(t2list2);
+         t2AdjList.add(t2list3);
+         t2AdjList.add(t2list4);
+         t2AdjList.add(t2list5);
+         t2AdjList.add(t2list6);
+         t2AdjList.add(t2list7);
+         t2AdjList.add(t2list8);
+         Graph t2g = new Graph(t2AdjList);
+        BreadthFirstSearch t2bfs = new BreadthFirstSearch();
+        t2bfs.traversal(t2start, t2end, t2g);
          
 
          

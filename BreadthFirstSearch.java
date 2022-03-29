@@ -58,6 +58,7 @@ public class BreadthFirstSearch extends Node{
        return topNode;
        }
    }
+   
    //traverse the path
    public void traversal(Node s, Node e, Graph g){
    //run through all options and return a path
@@ -73,7 +74,7 @@ public class BreadthFirstSearch extends Node{
       s.setVisited(true);
       
       Node n = null; // node to be used to track traversal
-      Node next = null;
+ 
       LinkedList<Node> neighbors;
       while(!q.isEmpty())  //while there is something in the queue
       {
@@ -81,7 +82,7 @@ public class BreadthFirstSearch extends Node{
          //get and store all its neighbors 
                   
         neighbors = adj.get(n.getID()); //get the linked list associated with the node we just dequeued
-        System.out.println("neighbors [0] = " + n.getID());
+        
          //reset color assocaited with n unless n.getState().equals("Start");
         
          for(int k=0; k < neighbors.size(); k++){  //loop through all the neighbors
@@ -93,20 +94,22 @@ public class BreadthFirstSearch extends Node{
                
                if(neighbors.get(k).getState().equals("End")){
                      n = neighbors.get(k);  //set n to the end point
-                  	q.clear(); 		//clear the queue = stop the while loop 
-                     
+                     q.clear(); 		//clear the queue = stop the while loop 
+                     System.out.println("n = " + n.getID());
+                     System.out.println("k state (inner)= " + neighbors.get(k).getState());
+                     System.out.println("n state (inner)= " + n.getState());
+                  	
                }
                
                //color the cell associated with next yellow
             }
            
-								
-				
          }
 
-     
       }
       
+      
+      System.out.println("n state (outer)= " + n.getState());
       //if n doesn't equal end print error message to user
       if(!n.getState().equals(e.getState()))
       {
