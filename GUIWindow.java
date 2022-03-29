@@ -286,11 +286,49 @@ public class GUIWindow extends JPanel {
             resizeButton.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mousePressed(MouseEvent e) {
-                    GridResized g = new GridResized();
+                    System.out.println("hey");
+                    window.remove(cells);
+
+                    GridResized gridResized = new GridResized();
+                    window.add(gridResized);
+                    gridResized.addMouseListener(new MouseAdapter() {
+                        @Override
+                        public void mousePressed(MouseEvent e) {
+                            int clickCounter = 0;
+                            int x = e.getX();
+                            int y = e.getY();
+                            // So that we can see on the console where the user is clicking
+                            // System.out.println(x + "," + y);
+                            //call to translateToCell()
+                            int cell = translateToCell(x,y);
+                            System.out.println(cell);
+
+                            GUIWindow cellClicked = new GUIWindow();
+                            Cell currentCell;
+                            if(startCell == false)
+                            {
+                                counter++;
+                                startCell = true;
+                                // currentCell = cellClicked.colorCell(cell, Color.GREEN);
+                            }
+                            else if(endCell == false){
+                                counter++;
+                                endCell = true;
+                                // currentCell = cellClicked.colorCell(cell, Color.RED);
+                            }
+                            else{
+                                counter++;
+                                // currentCell = cellClicked.colorCell(cell, Color.ORANGE);
+                            }
+
+
+                        }
+
+                    });
+
+
 
                 }
             });
-
-    }
-    
+        }
 }
