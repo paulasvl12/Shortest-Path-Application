@@ -14,7 +14,7 @@ public class GUIWindow extends JPanel {
     private static int counter = 0; //number of clicks on the grid
     private static boolean startCell = false; //true means the start has been selected false means it hasn'y
     private static boolean endCell = false;//true means the end has been selected false means it hasn'y
-    
+    public static String algorithm_selected;
 
     public static class Grid extends JPanel {
         public Grid() {
@@ -199,6 +199,19 @@ public class GUIWindow extends JPanel {
             window.add(instructions, BorderLayout.EAST);
 
 
+            start.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mousePressed(MouseEvent e) {
+                    if(startCell && endCell){
+                        Algorithms a = new Algorithms();
+                        a.start(String algorithm, Node[][] graph, int source, int end, Graph g, Node s, Node e,
+                                ArrayList<Edge> edges, int n);
+                    } else {
+                        System.out.println("Select start and end points");
+                    }
+
+                }
+            });
 
 
     }
