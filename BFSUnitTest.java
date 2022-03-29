@@ -5,7 +5,8 @@ public class BFSUnitTest{
    public static void main(String[] args) {
    //positive test cases
       //test 1 - example from class there are 5 nodes and only 1 path avaible
-       /* Node start = new Node("Start", 0);
+        System.out.println("Test 1");
+        Node start = new Node("Start", 0);
         Node end = new Node("End", 4);
         Node n = new Node("", 1);
         Node n2 = new Node("", 2);
@@ -44,8 +45,9 @@ public class BFSUnitTest{
         Graph g = new Graph(group);
         BreadthFirstSearch bfs = new BreadthFirstSearch();
         bfs.traversal(start, end, g);
-        */
+        
       //test 2 - there are multiple paths to reach the destination all of the same length
+      System.out.println("Test 2");
          Node t2start = new Node("Start", 1);
          Node t2end = new Node("End", 7);
          Node t2n0 = new Node("", 0);
@@ -124,18 +126,66 @@ public class BFSUnitTest{
 
          
       //test 3 - there are multiple paths to reach the destination each of different lengths
-         Node t3start = new Node("Start", 1);
-         Node t3end = new Node("End", 7);
-         Node t3n0 = new Node("", 0);
+      System.out.println("Test 3");
+         Node t3start = new Node("Start", 0);
+         Node t3end = new Node("End", 6);
+         Node t3n1 = new Node("", 1);
          Node t3n2 = new Node("", 2);
          Node t3n3 = new Node("", 3);
-         Node t3n4 = new Node("Obs", 4);
+         Node t3n4 = new Node("", 4);
          Node t3n5 = new Node("", 5);
-         Node t3n6 = new Node("", 6);
-         Node t3n8 = new Node("", 8);
-   //negative test cases
-      //test 1 - there is no path between the source and end point
-      //test 2 - 
+         
+         LinkedList<Node> t3list0 = new LinkedList<Node>();
+         t3list0.add(t3n1);
+         t3list0.add(t3n3);
+         t3list0.add(t3n4); 
+         LinkedList<Node> t3list1 = new LinkedList<Node>();
+         t3list1.add(t3start);
+         t3list1.add(t3n2);
+         t3list1.add(t3n3);
+         t3list1.add(t3n4);
+         t3list1.add(t3n5);
+         LinkedList<Node> t3list2 = new LinkedList<Node>();
+         t3list2.add(t3n1);
+         t3list2.add(t3n4);
+         t3list2.add(t3n5);
+         t3list2.add(t3end);
+         LinkedList<Node> t3list3 = new LinkedList<Node>();
+         t3list3.add(t3start);
+         t3list3.add(t3n1);
+         t3list3.add(t3n4);
+         LinkedList<Node> t3list4 = new LinkedList<Node>();
+         t3list4.add(t3start);
+         t3list4.add(t3n1);
+         t3list4.add(t3n2);
+         t3list4.add(t3n3);
+         t3list4.add(t3n5);
+         LinkedList<Node> t3list5 = new LinkedList<Node>();
+         t3list5.add(t3n1);
+         t3list5.add(t3n2);
+         t3list5.add(t3n4);
+         t3list5.add(t3end);
+         LinkedList<Node> t3list6 = new LinkedList<Node>();
+         t3list6.add(t3n2);
+         t3list6.add(t3n5);
+         ArrayList<LinkedList<Node>> t3AdjList = new ArrayList<LinkedList<Node>>();
+         t3AdjList.add(t3list0);
+         t3AdjList.add(t3list1);
+         t3AdjList.add(t3list2);
+         t3AdjList.add(t3list3);
+         t3AdjList.add(t3list4);
+         t3AdjList.add(t3list5);
+         t3AdjList.add(t3list6);
+         
+         
+         Graph t3g = new Graph(t3AdjList);
+         BreadthFirstSearch t3bfs = new BreadthFirstSearch();
+         t3bfs.traversal(t3start, t3end, t3g);
+        
+         
+         //negative test cases
+      //test 1 - there is no path between the source and end point (Obs blocking the way)
+      //test 2 - the graph is empty
    
    }
 
