@@ -98,6 +98,7 @@ public class GUIWindow extends JPanel {
             setVisible(true);
             
         }
+        
         public void paintComponent(Graphics g) {
           System.out.println("here");
           super.paintComponent(g);
@@ -107,6 +108,7 @@ public class GUIWindow extends JPanel {
           g2d.setColor(color);
           g2d.fillRect(x,y,30,30);
         }
+        
     }
 
         public static void main(String[] args) {
@@ -159,15 +161,15 @@ public class GUIWindow extends JPanel {
                 @Override
                 public void mousePressed(MouseEvent e) {
                 
-               
                     int x = e.getX();
                     int y = e.getY();
                     // So that we can see on the console where the user is clicking
                     //System.out.println(x + "," + y);
                     int cell = translateToCell(x,y);
                     System.out.println(cell);
+                    
                     GUIWindow cellClicked = new GUIWindow();
-                    Cell currentCell;
+                    Cell currentCell = cellClicked.colorCell(cell, Color.GREEN);
                     if(startCell == false)
                     {
                      counter++;
