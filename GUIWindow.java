@@ -28,7 +28,39 @@ public class GUIWindow extends JPanel {
                     g.drawRect(x,y, 30, 30);
         }
     }
-    
+
+    public static class GridResized extends JPanel{
+        int x;
+        int y;
+        Color color;
+        public GridResized() {
+            setSize(400*3, 400*3);
+            setVisible(true);
+        }
+
+        // resizes by a factor of 3
+        public void paintResized(Graphics g){
+            for (int x = 30; x <= 30*cols*3; x += 30)
+                for (int y = 30; y <= 30*rows*3; y += 30)
+                    g.drawRect(x,y, 30, 30);
+        }
+
+        public void paintComponent(Graphics g) {
+            // System.out.println("here");
+            // super.paintComponent(g);
+            // Graphics2D g2d = (Graphics2D) g;
+
+            g.setColor(color);
+            g.drawRect(x,y, 30, 30);
+
+            g.setColor(color);
+            g.fillRect(x,y,30,30);
+
+
+        }
+    }
+
+
     public static int translateToCell(int x, int y){
         int xOrigin = 30;
         int yOrigin = 30;
@@ -249,6 +281,15 @@ public class GUIWindow extends JPanel {
             instructions.setBackground(Color.lightGray);
             //instructions.setAlignment(Pos.NORTH);
             window.add(instructions, BorderLayout.EAST);
+
+
+            resizeButton.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mousePressed(MouseEvent e) {
+                    GridResized g = new GridResized();
+
+                }
+            });
 
     }
     
