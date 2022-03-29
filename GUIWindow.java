@@ -202,6 +202,20 @@ public class GUIWindow extends JPanel {
                 }
             });
             
+             start.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mousePressed(MouseEvent e) {
+                    if(startCell && endCell){
+                        Algorithms a = new Algorithms();
+                        a.start(String algorithm, Node[][] graph, int source, int end, Graph g, Node s, Node e,
+                                ArrayList<Edge> edges, int n);
+                    } else {
+                        System.out.println("Select start and end points");
+                    }
+
+                }
+            });
+            
             //did they click the reset button
             
             resetButton.addMouseListener(new MouseAdapter() {
