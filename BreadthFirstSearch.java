@@ -74,12 +74,13 @@ public class BreadthFirstSearch extends Node{
       s.setVisited(true);
       
       Node n = null; // node to be used to track traversal
- 
+      Node last = new Node();
       LinkedList<Node> neighbors;
       while(!q.isEmpty())  //while there is something in the queue
       {
          n = q.dequeue(); //set n to the top node of queue and remove that node from the queue
          //get and store all its neighbors 
+       
                   
         neighbors = adj.get(n.getID()); //get the linked list associated with the node we just dequeued
         
@@ -93,25 +94,23 @@ public class BreadthFirstSearch extends Node{
                neighbors.get(k).setVisited(true);
                
                if(neighbors.get(k).getState().equals("End")){
-                     n = neighbors.get(k);  //set n to the end point
+                     
+                     last = neighbors.get(k);  //set n to the end point
                      q.clear(); 		//clear the queue = stop the while loop 
-                     System.out.println("n = " + n.getID());
-                     System.out.println("k state (inner)= " + neighbors.get(k).getState());
-                     System.out.println("n state (inner)= " + n.getState());
-                  	
+                     break;
+                     
                }
+               
                
                //color the cell associated with next yellow
             }
-           
+   
          }
 
       }
       
-      
-      System.out.println("n state (outer)= " + n.getState());
       //if n doesn't equal end print error message to user
-      if(!n.getState().equals(e.getState()))
+      if(!last.getState().equals(e.getState()))
       {
          System.out.println("No path exisits between the selected start and end points");
       }
@@ -119,7 +118,7 @@ public class BreadthFirstSearch extends Node{
       {
          
          //else trace the path back
-         Node finalNode = n;
+         Node finalNode = last;
          
          //while there is still another node to look at and it isn't the start
          while(finalNode != null && !finalNode.getState().equals(s.getState()))

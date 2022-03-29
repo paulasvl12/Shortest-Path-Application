@@ -50,15 +50,15 @@ public class BFSUnitTest{
          Node t2end = new Node("End", 7);
          Node t2n0 = new Node("", 0);
          Node t2n2 = new Node("", 2);
-         Node t2n3 = new Node("Obs", 3);
+         Node t2n3 = new Node("", 3);
          Node t2n4 = new Node("Obs", 4);
          Node t2n5 = new Node("", 5);
          Node t2n6 = new Node("", 6);
          Node t2n8 = new Node("", 8);
          
          LinkedList<Node> t2list0 = new LinkedList<Node>();
-         t2list0.add(t2n3);
          t2list0.add(t2start);
+         t2list0.add(t2n3);
          t2list0.add(t2n4); //obs
          LinkedList<Node> t2list1 = new LinkedList<Node>();
          t2list1.add(t2n0);
@@ -93,8 +93,8 @@ public class BFSUnitTest{
          t2list5.add(t2n8);
          LinkedList<Node> t2list6 = new LinkedList<Node>();
          t2list6.add(t2n3);
-         t2list6.add(t2end);
          t2list6.add(t2n4); //obs
+         t2list6.add(t2end);
          LinkedList<Node> t2list7 = new LinkedList<Node>();
          t2list7.add(t2n3);
          t2list7.add(t2n4); //obs
@@ -102,9 +102,10 @@ public class BFSUnitTest{
          t2list7.add(t2n6);
          t2list7.add(t2n8);
          LinkedList<Node> t2list8 = new LinkedList<Node>();
+         t2list8.add(t2n4); //obs
          t2list8.add(t2n5);
          t2list8.add(t2end);
-         t2list8.add(t2n4); //obs
+         
          ArrayList<LinkedList<Node>> t2AdjList = new ArrayList<LinkedList<Node>>();
          t2AdjList.add(t2list0);
          t2AdjList.add(t2list1);
@@ -115,6 +116,7 @@ public class BFSUnitTest{
          t2AdjList.add(t2list6);
          t2AdjList.add(t2list7);
          t2AdjList.add(t2list8);
+         
          Graph t2g = new Graph(t2AdjList);
         BreadthFirstSearch t2bfs = new BreadthFirstSearch();
         t2bfs.traversal(t2start, t2end, t2g);
