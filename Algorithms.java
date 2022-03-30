@@ -218,7 +218,43 @@ public class mat{
       
                System.out.println();
             }
-         } */       
+         } */
+
+         Node n1 = new Node(0,0,"start");
+         Node n2 = new Node(0, 0, "");
+         Node n3 = new Node(0, 0, "");
+         Node n4 = new Node(0,0, "");
+         Node n5 = new Node(0,0,"end");
+         Node n6= new Node(0, 0, "");
+         Node n7 = new Node(0, 0, "");
+         Node n8 = new Node(0,0, "");
+         Node n9 = new Node(0,0,"");
+         Node n10 = new Node(0, 0, "");
+         Node n11= new Node(0, 0, "");
+         Node n12= new Node(0,0, "");
+         Node n13= new Node(0,0,"");
+         Node n14= new Node(0, 0, "");
+         Node n15= new Node(0, 0, "");
+         Node n16 = new Node(0,0, "");
+         Node n17= new Node(0,0,"");
+         Node n18= new Node(0, 0, "");
+         Node n19= new Node(0, 0, "");
+         Node n20 = new Node(0,0, "");
+         Node n21= new Node(0,0, "");
+         Node n22 = new Node(0,0,"");
+         Node n23= new Node(0, 0, "");
+         Node n24= new Node(0, 0, "");
+         Node n25= new Node(0,0, "");
+         Node n26= new Node(0,0,"");
+         Node n27= new Node(0, 0, "");
+         Node n28= new Node(0, 0, "");
+         Node n29= new Node(0,0, "");
+         Node n30= new Node(0,0,"");
+         Node n31= new Node(0, 0, "");
+         Node n32= new Node(0, 0, "");
+         Node n33 = new Node(0,0, "");
+         Node n34= new Node(0,0,"");
+         Node n35= new Node(0, 0, "");
      }
     
 }
