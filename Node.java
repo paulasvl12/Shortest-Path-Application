@@ -8,9 +8,7 @@ public class Node Comparable<Node>
            private String state; //start end or obstacle "Start" "End" "Obs" .
            private String gridCoor; //how we will connect it to our visual represenation
            private Integer distance; //used for dijstar and other weighted graphs
-           private int id; //number associated with the matrix?
-<<<<<<< Updated upstream
-=======
+           public int id; //number associated with the matrix?
            private static int idCounter = 0;
            public Node parent = null;
            public double f = Double.MAX_VALUE;
@@ -18,51 +16,23 @@ public class Node Comparable<Node>
            public double h;
 
            private static int idCounter = 0;
-    public int id;
 
     // Parent in the path
-    public Node parent = null;
+        public Node parent = null;
 
-    public List<Edge> neighbors;
+        public List<Edge> neighbors;
 
-    // Evaluation functions
-    public double f = Double.MAX_VALUE;
-    public double g = Double.MAX_VALUE;
-    // Hardcoded heuristic
-    public double h;
+        // Evaluation functions
+        public double f = Double.MAX_VALUE;
+        public double g = Double.MAX_VALUE;
+        // Hardcoded heuristic
+        public double h;
 
-    Node(double h) {
-        this.h = h;
-        this.id = idCounter++;
-        this.neighbors = new ArrayList<>();
-    }
-
-    @Override
-    public int compareTo(Node n) {
-        return Double.compare(this.f, n.f);
-    }
-
-    public static class Edge {
-        Edge(int weight, Node node) {
-            this.weight = weight;
-            this.node = node;
+        public Node(double h) {
+            this.h = h;
+            this.id = idCounter++;
+            this.neighbors = new ArrayList<>();
         }
-
-        public int weight;
-        public Node node;
-    }
-
-    public void addBranch(int weight, Node node) {
-        Edge newEdge = new Edge(weight, node);
-        neighbors.add(newEdge);
-    }
-
-    public double calculateHeuristic(Node target) {
-        return this.h;
-    }
-          
-           
->>>>>>> Stashed changes
             
       	  public Node()
       	  {
@@ -153,4 +123,3 @@ public class Node Comparable<Node>
                return false;
            }
 }
-=======
