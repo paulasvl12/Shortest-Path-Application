@@ -7,6 +7,11 @@ public class Node
            private String state; //start end or obstacle "Start" "End" "Obs" 
            private int distance; //used for dijstar and other weighted graphs
            private int id; //number associated with the matrix?
+           private int currentCost;
+           private int heuristicCost;
+           private int finalCost;
+           private int row;
+           private int column;
       
             
       	  public Node()
@@ -15,12 +20,11 @@ public class Node
       	     prev  = null;      
               next = null;
               state = "";
-              gridCoor = "";
               distance = Integer.MAX_VALUE; //sets edges to ininifty
-              allCells++;
+              
       	  }
-           
-           public Node(String type, int id)
+           //USE THIS CONSTRUCTOR
+           public Node(String type, int id, int row, int column)
            {
               visited = false;  //no nodes have been visited yet
       	     prev  = null;      
@@ -28,6 +32,11 @@ public class Node
               state = type;
               this.id = id;
               distance = Integer.MAX_VALUE; //sets edges to ininifty
+              currentCost = 0;
+              heuristicCost = 0;
+              finalCost = 0;
+              this.row = row;
+              this.column = column;
            }
            
            public Node(int dis, int id){
@@ -36,17 +45,9 @@ public class Node
       	     prev  = null;      
               next = null;
               state = "";
-              allCells++;
-              gridCoor = "";
               this.id = id;
            }
-           public String getGridCoor(){
-            return gridCoor;
-           }
-           public void setGridCoor(String n){
-            gridCoor = n;
-           }
-           
+                      
            public int getID(){
             return id;
            }
