@@ -3,7 +3,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public class AStar extends Node{
+public class AStar extends Graph{
 
     AStar(double h) {
         super(h);
