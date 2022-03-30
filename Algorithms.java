@@ -32,7 +32,7 @@ public class Algorithms extends GUIWindow{
                              ArrayList<Edge> edges, int n){
         if(algorithm.equalsIgnoreCase("AStar") || algorithm.equalsIgnoreCase("Select Algorithm") ){
             AStar a = new AStar();
-            a.AStar(graph, source, end);
+            a.AStar(source, end);
         } else if(algorithm.equalsIgnoreCase("BellmanFord")){
             bellmanfordRunner b = new bellmanfordRunner();
             b.runBellmanFordAlgorithm(edges, source, n, end);
