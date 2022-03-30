@@ -86,7 +86,7 @@ public class mat{
          Node n19 = new Node("",19, 2, 5);
          Node n20 = new Node("",20, 2, 6);
 
-         
+          //comment for example
          array[0][0] = n0;
          array[1][0] = n1;
          array[2][0] = n2;
