@@ -63,7 +63,7 @@ public class mat{
      public static void main(String[] args) {
          int[][] array = new int[35][35];
          int count = 0;
-         
+         Node n0 = new Node();
          
          
          array[0][0] = 0;
