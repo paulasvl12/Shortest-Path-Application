@@ -12,14 +12,12 @@ public class Node implements Comparable<Node>
            public Node parent = null;
            public double f = Double.MAX_VALUE;
            public double g = Double.MAX_VALUE;
-           public double h;  
-           public List<Edge> neighbors;
+           public double h;
    
           
            public Node(double h) {
                this.h = h;
                this.id = idCounter++;
-               this.neighbors = new ArrayList<>();
            }
             
       	  public Node()
@@ -87,21 +85,7 @@ public class Node implements Comparable<Node>
            public int compareTo(Node n) {
                return Double.compare(this.f, n.f);
            }
-           
-           public static class Edge {
-              Edge(int weight, Node node) {
-                  this.weight = weight;
-                  this.node = node;
-              }
-      
-              public int weight;
-              public Node node;
-          }
 
-           public void addBranch(int weight, Node node) {
-               Edge newEdge = new Edge(weight, node);
-               neighbors.add(newEdge);
-           }
 
            public double calculateHeuristic(Node target) {
                return this.h;
