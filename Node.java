@@ -1,5 +1,6 @@
+<<<<<<< HEAD
 import java.util.*;
-public class Node
+public class Node Comparable<Node>
        {
       	  private boolean visited;   
            private Node prev;   //used in bfs to trace the path at the end
@@ -15,6 +16,50 @@ public class Node
            public double f = Double.MAX_VALUE;
            public double g = Double.MAX_VALUE;
            public double h;
+
+           private static int idCounter = 0;
+    public int id;
+
+    // Parent in the path
+    public Node parent = null;
+
+    public List<Edge> neighbors;
+
+    // Evaluation functions
+    public double f = Double.MAX_VALUE;
+    public double g = Double.MAX_VALUE;
+    // Hardcoded heuristic
+    public double h;
+
+    Node(double h) {
+        this.h = h;
+        this.id = idCounter++;
+        this.neighbors = new ArrayList<>();
+    }
+
+    @Override
+    public int compareTo(Node n) {
+        return Double.compare(this.f, n.f);
+    }
+
+    public static class Edge {
+        Edge(int weight, Node node) {
+            this.weight = weight;
+            this.node = node;
+        }
+
+        public int weight;
+        public Node node;
+    }
+
+    public void addBranch(int weight, Node node) {
+        Edge newEdge = new Edge(weight, node);
+        neighbors.add(newEdge);
+    }
+
+    public double calculateHeuristic(Node target) {
+        return this.h;
+    }
           
            
 >>>>>>> Stashed changes
@@ -108,3 +153,4 @@ public class Node
                return false;
            }
 }
+=======
