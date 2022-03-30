@@ -7,6 +7,8 @@ import java.awt.event.MouseListener;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.util.LinkedList;
+import java.util.ArrayList;
 
 public class GUIWindow extends JPanel {
     private static int rows = 5;
@@ -181,8 +183,42 @@ public class GUIWindow extends JPanel {
          Node n32 = new Node("",32, 4, 4);
          Node n33 = new Node("",33, 4, 5);
          Node n34 = new Node("",34, 4, 6);
-         
-         
+         ArrayList<Node> cellArr = new ArrayList<Node>();
+         cellArr.add(n0);
+         cellArr.add(n1);
+         cellArr.add(n2);
+         cellArr.add(n3);
+         cellArr.add(n4);
+         cellArr.add(n5);
+         cellArr.add(n6);
+         cellArr.add(n7);
+         cellArr.add(n8);
+         cellArr.add(n9);
+         cellArr.add(n10);
+         cellArr.add(n11);
+         cellArr.add(n12);
+         cellArr.add(n13);
+         cellArr.add(n14);
+         cellArr.add(n15);
+         cellArr.add(n16);
+         cellArr.add(n17);
+         cellArr.add(n18);
+         cellArr.add(n19);
+         cellArr.add(n20);
+         cellArr.add(n21);
+         cellArr.add(n22);
+         cellArr.add(n23);
+         cellArr.add(n24);
+         cellArr.add(n25);
+         cellArr.add(n26);
+         cellArr.add(n27);
+         cellArr.add(n28);
+         cellArr.add(n29);
+         cellArr.add(n30);
+         cellArr.add(n31);
+         cellArr.add(n32);
+         cellArr.add(n33);
+         cellArr.add(n34);
          LinkedList<Node> list0 = new LinkedList<Node>();
          list0.add(n1);
          list0.add(n7);
@@ -533,30 +569,34 @@ public class GUIWindow extends JPanel {
                     if(startCell == false)
                     {
                     //set the state of the node in the graph to Start
+                    cellArr.get(cell).setState("Start");
+                    
                     //add to counter (they have selected something)
                      counter++;
                      //set that the start has now been selected
                      startCell = true;
                      //color in the cell green
-                     currentCell = cellClicked.colorCell(cell, Color.GREEN);
+                   //  currentCell = cellClicked.colorCell(cell, Color.GREEN);
                     }
                     //if they already had a start but not an end
                     else if(endCell == false){
                     //set the state of the node in the graph to End
+                    cellArr.get(cell).setState("End");
                     //add to counter (they have selected something)
                      counter++;
                      //set that they have selected a start
                      endCell = true;
                      //color the cell red
-                     currentCell = cellClicked.colorCell(cell, Color.RED);
+                    // currentCell = cellClicked.colorCell(cell, Color.RED);
                     }
                     //already have start and end
                     else{
                     //set the state of the node in the graph to Obs
+                    cellArr.get(cell).setState("Obs");
                     //add to counter (they have selected something)
                      counter++;
                      //color in the cell orange
-                     currentCell = cellClicked.colorCell(cell, Color.ORANGE);
+                    // currentCell = cellClicked.colorCell(cell, Color.ORANGE);
                     }
                 }
             });
@@ -568,10 +608,20 @@ public class GUIWindow extends JPanel {
                 //right click
                    if(e.isMetaDown()){
                      //get the state of the node and store it
+                     String s = cellArr.get(cell).getState("Obs");
                      //if it was start or end reset the boolean for selected
-                     //counter--;
+                     if(s.equals("Start"))
+                     {
+                        startCell = false;
+                     }
+                     if(s.equals("End"))
+                     {
+                        endCell = false;
+                     }
+                     counter--;
                      
                      //reset the state of associated node to ""
+                     cellArr.get(cell).setState("");
                      //color the cell white again/remove the color
                    }
                 

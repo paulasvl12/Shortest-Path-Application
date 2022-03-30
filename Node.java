@@ -89,7 +89,7 @@ public class Node
            }
            
            public boolean equals(Node n){
-            if(this.visited == n.visited && this.state.equals(n.state) && this.gridCoor.equals(n.gridCoor))
+            if(this.visited == n.visited && this.state.equals(n.state))
                return true;
             else
                return false;
