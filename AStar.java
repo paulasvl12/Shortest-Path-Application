@@ -3,10 +3,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public class AStar extends Graph{
+public class AStar extends Graph {
 
-    AStar(double h) {
-        super(h);
+    public AStar(int h, Node n) {
+         super(h, n);
+
     }
 
     public static Node aStar(Node start, Node target){
@@ -22,7 +23,7 @@ public class AStar extends Graph{
                 return n;
             }
 
-            for(Node.Edge edge : n.neighbors){
+            for(Graph edge : neighbors){
                 Node m = edge.node;
                 double totalWeight = n.g + edge.weight;
 
