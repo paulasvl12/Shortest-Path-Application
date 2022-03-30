@@ -147,6 +147,9 @@ public class GUIWindow extends JPanel {
     
     
         public static void main(String[] args) {
+        
+               
+        
         //create adjList graph
           Node n0 = new Node("",0, 0, 0);
          Node n1 = new Node("",1, 0, 1);
@@ -573,6 +576,7 @@ public class GUIWindow extends JPanel {
                        //set the state of the node in the graph to Start
                        cellArr.get(cell).setState("Start");
                        
+                       
                        //add to counter (they have selected something)
                         counter++;
                         //set that the start has now been selected
@@ -584,7 +588,7 @@ public class GUIWindow extends JPanel {
                        else if(endCell == false){
                        //set the state of the node in the graph to End
                        cellArr.get(cell).setState("End");
-                       //add to counter (they have selected something)
+                                              //add to counter (they have selected something)
                         counter++;
                         //set that they have selected a start
                         endCell = true;
@@ -611,8 +615,15 @@ public class GUIWindow extends JPanel {
                 public void mousePressed(MouseEvent e) {
                 //right click
                    if(e.isMetaDown()){
+                    int x = e.getX();
+                    int y = e.getY();
+                    // So that we can see on the console where the user is clicking
+                    //System.out.println(x + "," + y);
+                    int cell = translateToCell(x,y);
+                    
+
                      //get the state of the node and store it
-                     String s = cellArr.get(cell).getState("Obs");
+                     String s = cellArr.get(cell).getState();
                      //if it was start or end reset the boolean for selected
                      if(s.equals("Start"))
                      {
@@ -637,6 +648,20 @@ public class GUIWindow extends JPanel {
                 @Override
                 public void mousePressed(MouseEvent e) {
                     if(startCell && endCell){
+                    Node start = null;
+                    Node end = null;
+                    for(int i = 0; i < cellArr.size(); i++){
+                        if(!cellArr.get(i).getState().equals("") && !cellArr.get(i).getState().equals("Obs")){
+                             if(cellArr.get(i).getState().equals("Start")){
+                                 start = cellArr.get(i);
+                             }
+                             else {
+                                 end = cellArr.get(i);
+                             }
+                        }
+                    }
+                    BreadthFirstSearch bfs = new BreadthFirstSearch();
+                    bfs.traversal(start, end, adjGraph);
                     //    Algorithms a = new Algorithms();
                       //  a.start(String algorithm, Node[][] graph, int source, int end, Graph g, Node s, Node e,
                   //              ArrayList<Edge> edges, int n);
