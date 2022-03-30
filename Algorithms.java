@@ -163,6 +163,45 @@ public class mat{
          list9.add(n15);
          list9.add(n16);
          
+         
+         
+         ArrayList<LinkedList<Node>> adjList = new ArrayList<LinkedList<Node>>();
+         adjList.add(list0);
+         adjList.add(list1);
+         adjList.add(list2);
+         adjList.add(list3);
+         adjList.add(list4);
+         adjList.add(list5);
+         adjList.add(list6);
+         adjList.add(list7);
+         adjList.add(list8);
+         adjList.add(list9);
+         adjList.add(list10);
+         adjList.add(list11);
+         adjList.add(list12);
+         adjList.add(list13);
+         adjList.add(list14);
+         adjList.add(list15);
+         adjList.add(list16);
+         adjList.add(list17);
+         adjList.add(list18);
+         adjList.add(list19);
+         adjList.add(list20);
+         adjList.add(list21);
+         adjList.add(list22);
+         adjList.add(list23);
+         adjList.add(list24);
+         adjList.add(list25);
+         adjList.add(list26);
+         adjList.add(list27);
+         adjList.add(list28);
+         adjList.add(list29);
+         adjList.add(list30);
+         adjList.add(list31);
+         adjList.add(list32);
+         adjList.add(list33);
+         adjList.add(list34);
+
           //comment for example
          array[0][0] = n0;
          array[1][0] = n1;
