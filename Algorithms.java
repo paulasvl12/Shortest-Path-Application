@@ -89,16 +89,236 @@ public class mat{
          Node n22 = new Node("",22, 3, 1);
          Node n23 = new Node("",23, 3, 2);
          Node n24 = new Node("",24, 3, 3);
-        Node n25 = new Node("",25, 3, 4);
-        Node n26 = new Node("",26, 3, 5);
-        Node n27 = new Node("",27, 3, 6);
-        Node n28 = new Node("",28, 4, 0);
-        Node n29 = new Node("",29, 4, 1);
-        Node n30 = new Node("",30, 4, 2);
-        Node n31 = new Node("",31, 4, 3);
-        Node n32 = new Node("",32, 4, 4);
-        Node n33 = new Node("",33, 4, 5);
-        Node n34 = new Node("",34, 4, 6);
+         Node n25 = new Node("",25, 3, 4);
+         Node n26 = new Node("",26, 3, 5);
+         Node n27 = new Node("",27, 3, 6);
+         Node n28 = new Node("",28, 4, 0);
+         Node n29 = new Node("",29, 4, 1);
+         Node n30 = new Node("",30, 4, 2);
+         Node n31 = new Node("",31, 4, 3);
+         Node n32 = new Node("",32, 4, 4);
+         Node n33 = new Node("",33, 4, 5);
+         Node n34 = new Node("",34, 4, 6);
+         
+         LinkedList<Node> list10 = new LinkedList<>();
+         list10.add(n2);
+         list10.add(n3);
+         list10.add(n4);
+         list10.add(n9);
+         list10.add(n11);
+         list10.add(n16);
+         list10.add(n17);
+         list10.add(n18);
+         
+        
+         
+         LinkedList<Node> list11 = new LinkedList<>();
+         list11.add(n3);
+         list11.add(n4);
+         list11.add(n5);
+         list11.add(n10);
+         list11.add(n12);
+         list11.add(n17);
+         list11.add(n18);
+         list11.add(n19);
+        
+         
+         LinkedList<Node> list12 = new LinkedList<>();
+         list12.add(n4);
+         list12.add(n5);
+         list12.add(n6);
+         list12.add(n11);
+         list12.add(n13);
+         list12.add(n18);
+         list12.add(n19);
+         list12.add(n20);
+         
+         
+         
+         LinkedList<Node> list13 = new LinkedList<>();
+         list13.add(n5);
+         list13.add(n6);
+         list13.add(n12);
+         list13.add(n19);
+         list13.add(n20);
+         
+         LinkedList<Node> list14 = new LinkedList<>();
+         list14.add(n7);
+         list14.add(n8);
+         list14.add(n15);
+		 list14.add(n21);
+		 list14.add(n22);
+        
+        
+        LinkedList<Node> list15 = new LinkedList<>();
+        list15.add(n7);
+		list15.add(n8);
+		list15.add(n9);
+		list15.add(n14);
+		list15.add(n16);
+		list15.add(n21);
+		list15.add(n22);
+		list15.add(n23);
+        
+        LinkedList<Node> list16 = new LinkedList<>();
+        list16.add(n8);
+        list16.add(n9);
+        list16.add(n10);
+        list16.add(n15);
+        list16.add(n17);
+        list16.add(n22);
+        list16.add(n23);
+        list16.add(n24);
+        
+        LinkedList<Node> list17 = new LinkedList<>();
+        list17.add(n9);
+        list17.add(n10);
+        list17.add(n11);
+        list17.add(n16);
+        list17.add(n18);
+        list17.add(n23);
+        list17.add(n24);
+        list17.add(n25);
+        
+        LinkedList<Node> list18 = new LinkedList<>();
+        list18.add(n10);
+        list18.add(n11);
+        list18.add(n12);
+        list18.add(n17);
+		list18.add(n19);
+		list18.add(n24);
+		list18.add(n25);
+		list18.add(n26);
+
+        LinkedList<Node> list19 = new LinkedList<>();
+        list19.add(n11);
+        list19.add(n12);
+        list19.add(n13);
+        list19.add(n18);
+        list19.add(n20);
+        list19.add(n25);
+        list19.add(n26);
+        list19.add(n27);
+        
+        LinkedList<Node> list20 = new LinkedList<>();
+        list20.add(n12);
+        list20.add(n13);
+        list20.add(n19);
+        list20.add(n26);
+        list20.add(n27);
+        
+        LinkedList<Node> list21 = new LinkedList<>();
+        list21.add(n14);
+        list21.add(n15);
+        list21.add(n22);
+        list21.add(n28);
+        list21.add(n29);
+        
+        LinkedList<Node> list22 = new LinkedList<>();
+        list22.add(n14);
+        list22.add(n15);
+        list22.add(n16);
+        list22.add(n21);
+        list22.add(n23);
+        list22.add(n28);
+        list22.add(n29);
+        list22.add(n30);
+        
+        LinkedList<Node> list23 = new LinkedList<>();
+        list23.add(n15);
+        list23.add(n16);
+        list23.add(n17);
+        list23.add(n22);
+        list23.add(n24);
+        list23.add(n29);
+        list23.add(n30);
+        list23.add(n31);
+        
+        LinkedList<Node> list24 = new LinkedList<>();
+        list24.add(n16);
+        list24.add(n17);
+        list24.add(n18);
+        list24.add(n23);
+        list24.add(n25);
+        list24.add(n30);
+        list24.add(n31);
+        list24.add(n32);
+        
+        
+        LinkedList<Node> list25 = new LinkedList<>();
+        list25.add(n17);
+        list25.add(n18);
+        list25.add(n19);
+        list25.add(n24);
+        list25.add(n26);
+        list25.add(n31);
+        list25.add(n32);
+		list25.add(n33);
+        
+        LinkedList<Node> list26 = new LinkedList<>();
+        list26.add(n18);
+        list26.add(n19);
+		list26.add(n20);
+		list26.add(n25);
+		list26.add(n27);
+		list26.add(n32);
+		list26.add(n33);
+		list26.add(n34);
+
+		LinkedList<Node> list27 = new LinkedList<>();
+		list27.add(n19);
+		list27.add(n20);
+		list27.add(n26);
+		list27.add(n33);
+		list27.add(n34);
+		
+		LinkedList<Node> list28 = new LinkedList<>();
+		list28.add(n21);
+		list28.add(n22);
+		list28.add(n29);
+
+		LinkedList<Node> list29 = new LinkedList<>();
+		list29.add(n21);
+		list29.add(n22);
+		list29.add(n23);
+		list29.add(n28);
+		list29.add(n30);
+
+		LinkedList<Node> list30 = new LinkedList<>();
+		list30.add(n22);
+		list30.add(n23);
+		list30.add(n24);
+		list30.add(n29);
+		list30.add(n31);
+
+		LinkedList<Node> list31 = new LinkedList<>();
+		list31.add(n23);
+		list31.add(n24);
+		list31.add(n25);
+		list31.add(n30);
+		list31.add(n32);
+
+		LinkedList<Node> list32 = new LinkedList<>();
+		list32.add(n24);
+		list32.add(n25);
+		list32.add(n26);
+		list32.add(n31);
+		list32.add(n33);
+		
+
+		LinkedList<Node> list33 = new LinkedList<>();
+		list33.add(n25);
+		list33.add(n26);
+		list33.add(n27);
+		list33.add(n32);
+		list33.add(n33);
+		list33.add(n34);
+		
+		LinkedList<Node> list34 = new LinkedList<>();
+		list34.add(n26);
+		list34.add(n27);
+		list34.add(n33);
+
 
           //comment for example
          array[0][0] = n0;
