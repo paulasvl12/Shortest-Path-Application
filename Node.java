@@ -8,6 +8,16 @@ public class Node
            private String gridCoor; //how we will connect it to our visual represenation
            private Integer distance; //used for dijstar and other weighted graphs
            private int id; //number associated with the matrix?
+<<<<<<< Updated upstream
+=======
+           private static int idCounter = 0;
+           public Node parent = null;
+           public double f = Double.MAX_VALUE;
+           public double g = Double.MAX_VALUE;
+           public double h;
+          
+           
+>>>>>>> Stashed changes
             
       	  public Node()
       	  {
@@ -70,7 +80,27 @@ public class Node
            public void setPrev(Node n){
             prev = n;
            }
-           
+
+           public int compareTo(Node n) {
+               return Double.compare(this.f, n.f);
+           }
+
+           public void addBranch(int weight, Node node) {
+               Edge newEdge = new Edge(weight, node);
+               neighbors.add(newEdge);
+           }
+
+           public double calculateHeuristic(Node target) {
+               return this.h;
+           }
+
+           public Node getParent(){
+               return parent;
+           }
+           public void setParent(Node n){
+               parent = n;
+           }
+
            public boolean equals(Node n){
             if(this.visited == n.visited && this.state.equals(n.state) && this.gridCoor.equals(n.gridCoor))
                return true;
