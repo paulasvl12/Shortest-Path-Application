@@ -104,4 +104,10 @@ public class Node implements Comparable<Node>
             else
                return false;
            }
+           
+           public void addBranch(int weight, Node node){
+               Graph newGraph = new Graph(weight, node);
+                         
+          }
+
 }
