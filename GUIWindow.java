@@ -565,40 +565,44 @@ public class GUIWindow extends JPanel {
                     System.out.println(cell);
                     
                     GUIWindow cellClicked = new GUIWindow();
-                    //if they haven't selected a start
-                    if(startCell == false)
-                    {
-                    //set the state of the node in the graph to Start
-                    cellArr.get(cell).setState("Start");
-                    
-                    //add to counter (they have selected something)
-                     counter++;
-                     //set that the start has now been selected
-                     startCell = true;
-                     //color in the cell green
-                   //  currentCell = cellClicked.colorCell(cell, Color.GREEN);
+                    //only change the value if it doesn't already have a set state
+                    if(cellArr.get(cell).getState().equals("")){
+                       //if they haven't selected a start
+                       if(startCell == false)
+                       {
+                       //set the state of the node in the graph to Start
+                       cellArr.get(cell).setState("Start");
+                       
+                       //add to counter (they have selected something)
+                        counter++;
+                        //set that the start has now been selected
+                        startCell = true;
+                        //color in the cell green
+                      //  currentCell = cellClicked.colorCell(cell, Color.GREEN);
+                       }
+                       //if they already had a start but not an end
+                       else if(endCell == false){
+                       //set the state of the node in the graph to End
+                       cellArr.get(cell).setState("End");
+                       //add to counter (they have selected something)
+                        counter++;
+                        //set that they have selected a start
+                        endCell = true;
+                        //color the cell red
+                       // currentCell = cellClicked.colorCell(cell, Color.RED);
+                       }
+                       //already have start and end
+                       else{
+                       //set the state of the node in the graph to Obs
+                       cellArr.get(cell).setState("Obs");
+                       //add to counter (they have selected something)
+                        counter++;
+                        //color in the cell orange
+                       // currentCell = cellClicked.colorCell(cell, Color.ORANGE);
+                       }
+
                     }
-                    //if they already had a start but not an end
-                    else if(endCell == false){
-                    //set the state of the node in the graph to End
-                    cellArr.get(cell).setState("End");
-                    //add to counter (they have selected something)
-                     counter++;
-                     //set that they have selected a start
-                     endCell = true;
-                     //color the cell red
-                    // currentCell = cellClicked.colorCell(cell, Color.RED);
-                    }
-                    //already have start and end
-                    else{
-                    //set the state of the node in the graph to Obs
-                    cellArr.get(cell).setState("Obs");
-                    //add to counter (they have selected something)
-                     counter++;
-                     //color in the cell orange
-                    // currentCell = cellClicked.colorCell(cell, Color.ORANGE);
-                    }
-                }
+                   }
             });
             
             //right click action listener for grid
