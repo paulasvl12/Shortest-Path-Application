@@ -85,6 +85,20 @@ public class mat{
          Node n18 = new Node("",18, 2, 4);
          Node n19 = new Node("",19, 2, 5);
          Node n20 = new Node("",20, 2, 6);
+         Node n21 = new Node("",21, 3, 0);
+         Node n22 = new Node("",22, 3, 1);
+         Node n23 = new Node("",23, 3, 2);
+         Node n24 = new Node("",24, 3, 3);
+        Node n25 = new Node("",25, 3, 4);
+        Node n26 = new Node("",26, 3, 5);
+        Node n27 = new Node("",27, 3, 6);
+        Node n28 = new Node("",28, 4, 0);
+        Node n29 = new Node("",29, 4, 1);
+        Node n30 = new Node("",30, 4, 2);
+        Node n31 = new Node("",31, 4, 3);
+        Node n32 = new Node("",32, 4, 4);
+        Node n33 = new Node("",33, 4, 5);
+        Node n34 = new Node("",34, 4, 6);
 
 
          LinkedList<Node> list0 = new LinkedList<Node>();
