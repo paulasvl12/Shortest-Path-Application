@@ -23,7 +23,7 @@ public class AStar extends Graph {
                 return n;
             }
 
-            for(Graph edge : neighbors){
+            for(Graph edge : Graph.neighbors){
                 Node m = edge.node;
                 double totalWeight = n.g + edge.weight;
 
