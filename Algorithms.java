@@ -61,8 +61,8 @@ public class Algorithms extends GUIWindow{
 
 public class mat{
      public static void main(String[] args) {
-         int[][] array = new int[35][35];
-         int count = 0;
+         Node[][] array = new int[35][35];
+         
          //state, id, row, column
          Node n0 = new Node("",0, 0, 0);
          Node n1 = new Node("",1, 0, 1);
@@ -87,41 +87,41 @@ public class mat{
          Node n20 = new Node("",20, 2, 6);
 
          
-         array[0][0] = 0;
-         array[1][0] = 1;
-         array[2][0] = 2;
-         array[3][0] = 3;
-         array[4][0] = 4;
-         array[5][0] = 5;
-         array[6][0] = 6;
-         array[7][0] = 7; 
-         array[8][0] = 8;
-         array[9][0] = 9;
-         array[10][0] = 10;
-         array[11][0] = 11;
-         array[12][0] = 12;
-         array[13][0] = 13;
-         array[14][0] = 14;
-         array[15][0] = 15;
-         array[16][0] = 16;
-         array[17][0] = 17;
-         array[18][0] = 18;
-         array[18][0] = 19;
-         array[20][0] = 20;
-         array[21][0] = 21;
-         array[22][0] = 22;
-         array[23][0] = 23;
-         array[24][0] = 24;
-         array[25][0] = 25;
-         array[26][0] = 26;
-         array[27][0] = 27;
-         array[28][0] = 28;
-         array[29][0] = 29;
-         array[30][0] = 30;
-         array[31][0] = 31;
-         array[32][0] = 32;
-         array[33][0] = 33;
-         array[34][0] = 34;
+         array[0][0] = n0;
+         array[1][0] = n1;
+         array[2][0] = n2;
+         array[3][0] = n3;
+         array[4][0] = n4;
+         array[5][0] = n5;
+         array[6][0] = n6;
+         array[7][0] = n7; 
+         array[8][0] = n8;
+         array[9][0] = n9;
+         array[10][0] = n10;
+         array[11][0] = n11;
+         array[12][0] = n12;
+         array[13][0] = n13;
+         array[14][0] = n14;
+         array[15][0] = n15;
+         array[16][0] = n16;
+         array[17][0] = n17;
+         array[18][0] = n18;
+         array[18][0] = n19;
+         array[20][0] = n20;
+         array[21][0] = n21;
+         array[22][0] = n22;
+         array[23][0] = n23;
+         array[24][0] = n24;
+         array[25][0] = n25;
+         array[26][0] = n26;
+         array[27][0] = n27;
+         array[28][0] = n28;
+         array[29][0] = n29;
+         array[30][0] = n30;
+         array[31][0] = n31;
+         array[32][0] = n32;
+         array[33][0] = n33;
+         array[34][0] = n34;
          
          array[0][1] = 35;
          array[1][1] = 36;
