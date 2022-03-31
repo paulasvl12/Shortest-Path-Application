@@ -689,12 +689,14 @@ public class GUIWindow extends JPanel {
       resetButton.addMouseListener(new MouseAdapter() {
          @Override
          public void mousePressed(MouseEvent e) {
-         //reset dropdown menu
-         dropdown_menu.setSelectedIndex(0);
+          //reset dropdown menu
+          dropdown_menu.setSelectedIndex(0);
+          dropdown_menu.setEnabled(true);
+           //enable the start and resize buttons again
+           startButton.setEnabled(true);
+           resizeButton.setEnabled(true);
          //reset the grid
-         window.remove(cells);
-         Grid cells2 = new Grid();
-         window.add(cells2);
+        
 
          //reset all points on the graph
                   
@@ -704,7 +706,16 @@ public class GUIWindow extends JPanel {
          endCell = false;
          rows = 5;
          cols = 7;
-  
+         
+        
+          //reset all points on the graph
+             for(int i = 0; i < cellArr.size(); i++){
+                    cellArr.get(i).setState("");
+                    cellArr.get(i).setDistance(Integer.MAX_VALUE);
+                    cellArr.get(i).setPrev(null);
+                    cellArr.get(i).setNext(null);
+                    cellArr.get(i).setVisited(false);
+              }
 
          }
       });
