@@ -34,8 +34,8 @@ public class Algorithms extends GUIWindow{
        //     AStar a = new AStar();
          //   a.AStar(source, end);
         } else if(algorithm.equalsIgnoreCase("BellmanFord")){
-          //  bellmanfordRunner b = new bellmanfordRunner();
-           // b.runBellmanFordAlgorithm(edges, source, n, end);
+          //  bellmanfordRunner bell = new bellmanfordRunner();
+           // bell.runBellmanFordAlgorithm(edges, source, n, end);
         } else if(algorithm.equalsIgnoreCase("Bidirectional Search")){
            BidirectionalSearch bi = new BidirectionalSearch();
            bi.biDirectionalSearch(s, e, g);
