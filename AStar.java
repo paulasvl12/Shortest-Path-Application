@@ -5,8 +5,7 @@ import java.util.PriorityQueue;
 
 public class AStar extends Graph {
 
-
-    public static void AStar(ArrayList<Edge> edges, int source, int n, int destination){
+    public static Node AStar(Node start, Node target){
         PriorityQueue<Node> closedList = new PriorityQueue<>();
         PriorityQueue<Node> openList = new PriorityQueue<>();
 
@@ -19,7 +18,7 @@ public class AStar extends Graph {
                 return n;
             }
 
-            for(Graph edge : Graph.neighbors){
+            for(Graph edge : n.neighbors){
                 Node m = edge.node;
                 double totalWeight = n.g + edge.weight;
 
@@ -95,7 +94,7 @@ public class AStar extends Graph {
         n5.addBranch(1, n4);
         n5.addBranch(3, target);
 
-        Node res = aStar(head, target);
+        Node res = AStar(head, target);
         printPath(res);
     }
 
