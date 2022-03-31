@@ -112,7 +112,7 @@ public class BreadthFirstSearch extends Node{
       //if n doesn't equal end print error message to user
       if(!last.getState().equals(e.getState()))
       {
-         System.out.println("No path exisits between the selected start and end points");
+         System.out.println("No path exists between the selected start and end points");
       }
       else
       {
@@ -126,14 +126,14 @@ public class BreadthFirstSearch extends Node{
             //if it isn't the last node in the path
             if(!finalNode.getState().equals(e.getState())){
                //change the color of the cell associated with it
-               System.out.println(finalNode.getID());
+               System.out.print(finalNode.getID() + " ");
             }
             finalNode = finalNode.getPrev();
             
          }
       }
       }catch(IndexOutOfBoundsException exception){
-         System.out.println("Graph Invaild - Cannot traverse an empty graph");
+         System.out.println("Graph Invalid - Cannot traverse an empty graph");
       }
    }
    

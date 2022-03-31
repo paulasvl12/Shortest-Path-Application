@@ -47,6 +47,7 @@ public class BFSUnitTest{
         bfs.traversal(start, end, g);
         
       //test 2 - there are multiple paths to reach the destination all of the same length
+      System.out.println("");
       System.out.println("Test 2");
          Node t2start = new Node("Start", 1);
          Node t2end = new Node("End", 7);
@@ -126,6 +127,7 @@ public class BFSUnitTest{
 
          
       //test 3 - there are multiple paths to reach the destination each of different lengths
+      System.out.println("");
       System.out.println("Test 3");
          Node t3start = new Node("Start", 0);
          Node t3end = new Node("End", 6);
@@ -185,6 +187,7 @@ public class BFSUnitTest{
          
          //negative test cases
       //test 4 - there is no path between the source and end point (Obs blocking the way)
+       System.out.println("");
        System.out.println("Test 4 - No Path to be found");
          Node t4start = new Node("Start", 0);
          Node t4end = new Node("End", 6);
@@ -242,6 +245,7 @@ public class BFSUnitTest{
          t4bfs.traversal(t4start, t4end, t4g);
 
       //test 5 - the graph is empty
+       System.out.println("");
        System.out.println("Test 5 - No Path to be found");
          Node t5start = new Node("Start", 0);
          Node t5end = new Node("End", 6);
