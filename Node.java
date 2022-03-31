@@ -23,6 +23,7 @@ public class Node
               distance = Integer.MAX_VALUE; //sets edges to ininifty
               
       	  }
+           
            //USE THIS CONSTRUCTOR
            public Node(String type, int id, int row, int column)
            {
@@ -87,11 +88,16 @@ public class Node
            {
              return distance;
            }
-           
-           public void setDistance(int dis)
+
+           public int getRow()
            {
-            distance = dis;
+             return row;
            }
+           public int getColumn()
+           {
+             return column;
+           }
+           
            public boolean equals(Node n){
             if(this.visited == n.visited && this.state.equals(n.state))
                return true;
