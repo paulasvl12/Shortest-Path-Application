@@ -8,12 +8,12 @@ public class Graph extends Node {
     Node[][] adjMatrix; // I added this for Dijkstra
     Set<Node> allNodes; //set of all nodes in the graph
     ArrayList<Node> nodeList; // Added for BellmanFord algorithm
-    ArrayList<Edge> edgeList; // Added for BellmanFord algorithm
+    //ArrayList<Edge> edgeList; // Added for BellmanFord algorithm
 
-    public Graph(LinkedList<Node> adj, Set<Node> s){
+    /*public Graph(LinkedList<Node> adj, Set<Node> s){
       nodes = adj;
       allNodes = s;
-     }
+     }*/
 
     public Graph(int[][] m)
     {
@@ -121,13 +121,13 @@ public class Graph extends Node {
       for(int i = 0; i< this.nodeList.size(); i++){
         if(this.nodeList.get(i).getState() == "Obs"){
           int nodeRow = this.nodeList.get(i).getRow();
-          int nodeColumn = this.nodeList.get(i).getColumn();
+          int nodeCol = this.nodeList.get(i).getCol();
 
           for (int column = 0; i < 35; column++){
             matrix[nodeRow][column] = 0;
           }
           for (int row = 0; i < 35; row++){
-            matrix[row][nodeColumn] = 0;
+            matrix[row][nodeCol] = 0;
           }
           
         }
@@ -137,7 +137,7 @@ public class Graph extends Node {
     }
 
     // Returns graph represented by its edges
-    public ArrayList<Edge> getEdges(){
+    /*public ArrayList<Edge> getEdges(){
 
       ArrayList<Edge> edgeList = new ArrayList<Edge>();
       
@@ -154,6 +154,6 @@ public class Graph extends Node {
       }
       
       return edgeList;
-    }
+    }*/
 
 }
