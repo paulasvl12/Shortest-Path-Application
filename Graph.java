@@ -2,27 +2,27 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Graph {
 public class Graph extends Node {
-    public ArrayList<Edge> neighbors;
 
+   public static int weight;
+   public static Node node;
+   public List<Graph> neighbors;
 
-    public static class Edge {
-        Edge(int weight, Node node) {
-            this.weight = weight;
-            this.node = node;
-        }
+   public Graph(int weight, Node node){
+      this.weight = weight;
+      this.node = node;
+   }
+   
 
-        public int weight;
-        public Node node;
-    public Edge(int weight, Node node) {
-        this.weight = weight;
-        this.node = node;
-        this.neighbors = new ArrayList<>();
-
+        
+    public void addBranch(int weight, Node node){
+         Graph newGraph = new Graph(weight, node);
+         neighbors.add(newGraph);
+                   
     }
-
-    public int weight;
-    public Node node;
+    
+    public double calculateHeuristic(Node target){
+      return this.h;
+    }
 
 }
