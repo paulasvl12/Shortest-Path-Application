@@ -6,7 +6,7 @@ public class Dijkstra1 extends Node{
 
     public static void dijkstra(Node[][] graph, int sourceVertex, int destination){
         LinkedList<Integer> shortestPath = new LinkedList();
-
+         try{
         int vertexCount = graph.length;
         boolean[] visitedVertex = new boolean[vertexCount];
         int[] distance = new int[vertexCount];
@@ -49,6 +49,9 @@ public class Dijkstra1 extends Node{
             if(distance[destination] == 0){
                 System.out.println("Path not found");
             }
+            }catch(IndexOutOfBoundsException exception){
+         System.out.println("Index Out of Bounds Error");
+      }
     }
 
     private static int findMinDistance(int[] distance, boolean[] visitedVertex) {
