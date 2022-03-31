@@ -210,5 +210,38 @@ public class AStar extends Graph {
     private void setDiagonalCost(int diagonalCost) {
         this.diagonalCost = diagonalCost;
     }
+    
+    public static void main(String[] args) {
+
+        int[][] test1Matrix = {
+                  {0, 2, 0, 2, 3, 0, 0, 0, 0},
+                  {2, 0, 2, 3, 2, 3, 0, 0, 0},
+                  {0, 2, 0, 0, 3, 2, 0, 0, 0},
+                  {2, 3, 0, 0, 2, 0, 2, 3, 0},
+                  {3, 2, 3, 2, 0, 2, 3, 2, 3},
+                  {0, 3, 2, 0, 2, 0, 0, 3, 2},
+                  {0, 0, 0, 3, 2, 0, 0, 2, 0},
+                  {0, 0, 0, 3, 2, 3, 2, 0, 2},
+                  {0, 0, 0, 0, 3, 2, 0, 2, 0},
+               };
+                              
+               Node initialNode = new Node(2, 1);
+               Node finalNode = new Node(2, 5);
+               int row = 3;
+               int col = 3;
+                               
+               Graph g1 = new Graph(test1Matrix);
+               AStar t = new AStar(test1Matrix, initialNode, finalNode);
+                 
+                 
+                 
+               t.setBlocks(test1Matrix);
+               List<Node> path = t.findPath();
+               for (Node node : path) {
+                     System.out.println(node);                
+               }
+                
+       }
+
 
 }
