@@ -559,7 +559,7 @@ public class GUIWindow extends JPanel {
          Grid cells = new Grid();
          window.add(cells);
            
-         Cell currentCell;
+         //Cell currentCell;
          //left click action listener for grid
          cells.addMouseListener(new MouseAdapter() {
             @Override
@@ -745,8 +745,8 @@ public class GUIWindow extends JPanel {
                   int cell = translateToCell(x,y);
                   System.out.println(cell);
 
-                  GUIWindow cellClicked = new GUIWindow();
-                  Cell currentCell;
+                  //GUIWindow cellClicked = new GUIWindow();
+                 // Cell currentCell;
                   if(startCell == false)
                   {
                      counter++;
