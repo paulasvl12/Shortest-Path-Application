@@ -80,16 +80,20 @@ public class bellmanfordRunner extends Graph {
                  }
               }
 
-              // Print the distance between given source and destination as well as the path
-              if (destination != source && distance[destination] < Integer.MAX_VALUE)
-              {
-                 List<Integer> path = new ArrayList<>();
-                 getPath(parent, destination, path);
-                 System.out.println("The distance of vertex " + destination + " from vertex " + source + " is " + distance[destination] + ". It's path is " + path);
-              } else if (destination != source && distance[destination] == Integer.MAX_VALUE)
-              {
-                System.out.println("There is no path between " + source + " and " + destination);
-              }
+            // Print the distance between given source and destination as well as the path
+            if (destination != source && distance[destination] < Integer.MAX_VALUE)
+            {
+               List<Integer> path = new ArrayList<>();
+               getPath(parent, destination, path);
+               System.out.println("The distance of vertex " + source + " to vertex " + destination + " is " + distance[destination]);
+               System.out.println("It's path is " + path);
+            }
+            // If not path found, let the user know
+            else if (destination != source && distance[destination] == Integer.MAX_VALUE)
+            {
+               System.out.println("There is no path between " + source + " and " + destination);
+            }
+
            }
            catch (Exception error) {
              System.out.println("Something went wrong");
