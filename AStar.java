@@ -213,7 +213,7 @@ public class AStar extends Graph {
     
     public static void main(String[] args) {
 
-        int[][] test1Matrix = {
+        int[][] testMatrix = {
                   {0, 2, 0, 2, 3, 0, 0, 0, 0},
                   {2, 0, 2, 3, 2, 3, 0, 0, 0},
                   {0, 2, 0, 0, 3, 2, 0, 0, 0},
@@ -230,12 +230,12 @@ public class AStar extends Graph {
                int row = 3;
                int col = 3;
                                
-               Graph g1 = new Graph(test1Matrix);
-               AStar t = new AStar(test1Matrix, initialNode, finalNode);
+               Graph g1 = new Graph(testMatrix);
+               AStar t = new AStar(testMatrix, initialNode, finalNode);
                  
                  
                  
-               t.setBlocks(test1Matrix);
+               t.setBlocks(testMatrix);
                List<Node> path = t.findPath();
                for (Node node : path) {
                      System.out.println(node);                
