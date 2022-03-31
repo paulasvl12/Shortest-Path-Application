@@ -88,6 +88,11 @@ public class Node
            {
              return distance;
            }
+           
+           public void setDistance(int dis)
+           {
+             distance = dis;
+           }
 
            public int getRow()
            {
