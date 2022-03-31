@@ -63,7 +63,7 @@ public class BreadthFirstSearch extends Node{
    public void traversal(Node s, Node e, Graph g){
    //run through all options and return a path
    
-   //present graph in 2d array
+      try{
    
       //make a queue to store data
       Queue q = new Queue();
@@ -132,56 +132,12 @@ public class BreadthFirstSearch extends Node{
             
          }
       }
+      }catch(IndexOutOfBoundsException exception){
+         System.out.println("Graph Invaild - Cannot traverse an empty graph");
+      }
    }
    
-   
 
-/*
-
-void traversal(Node s, Node e, LinkedList<Node>[] adj):
-	
-//takes start and end node and adj list as parameters
-
-LinkedList<Node>[] g=adj// adjacency list of graph
-
-		Queue<Node> q  		 //queue with enqueue and 
-dequeue
-		q.enqueue(s)
-		S.visited  = true    		//set start to 
-visited
-		
-While !q.isEmpty() 			///loop while the queue 
-isnâ€™t empty
-		Node = q.dequeue()  		 //get the top node
-		Neighbors = g.get(node)    //find the neighbors of 
-the node from the adjacency list
-		* reset color the cell associated with node unless 
-node.state == start
-
-		for(k=0; k<= neighbors.length; k++)  //loop through 
-all the neighbors
-			If next.visited == false && next.state != obs	//once we find the next unvisited node that isnâ€™t an 
-obstacle
-				q.enqueue(next)	//add it to the queue
-				Next.visited = true		//mark it as visited
-				Next.prev =node		//mark the current node as the prev for next node
-				If next.state == end   //if the end point has been reached
-					
-					q.clear() 		//clear the queue = stop the while loop
-					*color the cell associated with next yellow
-
-
-Final_node = e				//set the end point to final_node
-while(final_node != null || s)	//while there is another 
-node and it isnâ€™t the start
-If node.state != end 		//if it isnâ€™t the end node
-
-*color the cell associated with the node on the 
-graph yellow
-
-Final_node = node.prev 	//set the final_node to the node before it
-
-*/
 
 
 }
