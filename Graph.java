@@ -12,7 +12,7 @@ public class Graph extends Node {
     public int weight;
     public Node node;
 
-    public void Edge(int weight, Node node) {
+    public void Graph(int weight, Node node) {
         this.weight = weight;
         this.node = node;
         this.neighbors = new ArrayList<>();
