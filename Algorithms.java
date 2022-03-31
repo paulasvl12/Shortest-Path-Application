@@ -57,10 +57,10 @@ public class Algorithms extends GUIWindow {
     // }
 
      public static void start(String algorithm, Node[][] graph, int source, int end, Graph g, Node s, Node e,
-                             ArrayList<Node> allCells, int n){
+                             ArrayList<Node> allCells, int n, int[][] aStarGraph){
         if(algorithm.equalsIgnoreCase("AStar") || algorithm.equalsIgnoreCase("Select Algorithm") ){
             AStar a = new AStar();
-            a.AStar(graph, s, e);
+            a.AStar(aStarGraph, s, e);
         } else if(algorithm.equalsIgnoreCase("BellmanFord")){
           // Update matrix with cell information
           g.updateMatrix();

@@ -711,7 +711,7 @@ public class GUIWindow extends JPanel {
                     String algo = (String) dropdown_menu.getSelectedItem();
                    Algorithms a = new Algorithms();
                    //drop-down selection, graph for Dijkstra, start node id, end node id, graph that hold adj list, start node, end node, arraylist of all the node, and size of graph
-                    a.start(algo, graphDijkstra, start.getID(), end.getID(), adjGraph, start, end, cellArr, 34);
+                    a.start(algo, graphDijkstra, start.getID(), end.getID(), adjGraph, start, end, cellArr, 34, graphAStar);
                     
                     } else {
                         System.out.println("Select start and end points");
