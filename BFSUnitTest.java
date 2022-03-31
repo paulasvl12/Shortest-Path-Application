@@ -184,9 +184,71 @@ public class BFSUnitTest{
         
          
          //negative test cases
-      //test 1 - there is no path between the source and end point (Obs blocking the way)
-      //test 2 - the graph is empty
-   
+      //test 4 - there is no path between the source and end point (Obs blocking the way)
+       System.out.println("Test 4 - No Path to be found");
+         Node t4start = new Node("Start", 0);
+         Node t4end = new Node("End", 6);
+         Node t4n1 = new Node("Obs", 1);
+         Node t4n2 = new Node("Obs", 2);
+         Node t4n3 = new Node("Obs", 3);
+         Node t4n4 = new Node("Obs", 4);
+         Node t4n5 = new Node("Obs", 5);
+         
+         LinkedList<Node> t4list0 = new LinkedList<Node>();
+         t4list0.add(t4n1);
+         t4list0.add(t4n3);
+         t4list0.add(t4n4); 
+         LinkedList<Node> t4list1 = new LinkedList<Node>();
+         t4list1.add(t4start);
+         t4list1.add(t4n2);
+         t4list1.add(t4n3);
+         t4list1.add(t4n4);
+         t4list1.add(t4n5);
+         LinkedList<Node> t4list2 = new LinkedList<Node>();
+         t4list2.add(t4n1);
+         t4list2.add(t4n4);
+         t4list2.add(t4n5);
+         t4list2.add(t4end);
+         LinkedList<Node> t4list3 = new LinkedList<Node>();
+         t4list3.add(t4start);
+         t4list3.add(t4n1);
+         t4list3.add(t4n4);
+         LinkedList<Node> t4list4 = new LinkedList<Node>();
+         t4list4.add(t4start);
+         t4list4.add(t4n1);
+         t4list4.add(t4n2);
+         t4list4.add(t4n3);
+         t4list4.add(t4n5);
+         LinkedList<Node> t4list5 = new LinkedList<Node>();
+         t4list5.add(t4n1);
+         t4list5.add(t4n2);
+         t4list5.add(t4n4);
+         t4list5.add(t4end);
+         LinkedList<Node> t4list6 = new LinkedList<Node>();
+         t4list6.add(t4n2);
+         t4list6.add(t4n5);
+         ArrayList<LinkedList<Node>> t4AdjList = new ArrayList<LinkedList<Node>>();
+         t4AdjList.add(t4list0);
+         t4AdjList.add(t4list1);
+         t4AdjList.add(t4list2);
+         t4AdjList.add(t4list3);
+         t4AdjList.add(t4list4);
+         t4AdjList.add(t4list5);
+         t4AdjList.add(t4list6);
+         
+         
+         Graph t4g = new Graph(t4AdjList);
+         BreadthFirstSearch t4bfs = new BreadthFirstSearch();
+         t4bfs.traversal(t4start, t4end, t4g);
+
+      //test 5 - the graph is empty
+       System.out.println("Test 5 - No Path to be found");
+         Node t5start = new Node("Start", 0);
+         Node t5end = new Node("End", 6);
+         ArrayList<LinkedList<Node>> t5AdjList = new ArrayList<LinkedList<Node>>();
+         Graph t5g = new Graph(t5AdjList);
+         BreadthFirstSearch t5bfs = new BreadthFirstSearch();
+         t5bfs.traversal(t5start, t5end, t5g);
    }
 
 }
