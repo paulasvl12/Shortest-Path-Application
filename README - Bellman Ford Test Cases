@@ -1,0 +1,22 @@
+READ ME for Bellman Ford Algorithm Test Cases
+
+You should ensure you can run the following: 
+javax.swing.*; 
+javax.swing.border.Border; 
+java.awt.*; 
+java.awt.event.MouseAdapter; 
+java.awt.event.MouseEvent; 
+java.awt.event.MouseListener; 
+java.awt.Color; java.awt.Graphics; 
+java.awt.Graphics2D; java.util.LinkedList; 
+java.util.ArrayList;
+java.util.*; 
+java.lang.*; 
+java.io.*;
+
+They are used across the java files needed to run the program.
+
+To run the test cases in Bellman Ford:
+1. Open the bellmanFordTest.java in your IDE
+2. Click Run
+3. The code will be commented to describe each test case as well as in the output of the program
