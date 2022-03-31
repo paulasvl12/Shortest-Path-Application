@@ -10,23 +10,23 @@ public class Algorithms extends GUIWindow {
     public int getSource(){
         return source;
     }
-    
+
     public void setSource(int s){
         source = s;
     }
-    
+
     public int getEnd(){
         return end;
     }
-    
+
     public void setEnd(int e){
         end = e;
     }
-    
+
     public Node[][] getGraph(){
         return graph;
     }
-    
+
     public void setGraph(Node[][] g){
         graph = g;
     }
@@ -55,24 +55,25 @@ public class Algorithms extends GUIWindow {
     //         d.dijkstra(graph, source, end);
     //     }
     // }
-    
+
      public static void start(String algorithm, Node[][] graph, int source, int end, Graph g, Node s, Node e,
                              ArrayList<Node> allCells, int n){
         if(algorithm.equalsIgnoreCase("AStar") || algorithm.equalsIgnoreCase("Select Algorithm") ){
        //     AStar a = new AStar();
          //   a.AStar(source, end);
         } else if(algorithm.equalsIgnoreCase("BellmanFord")){
-            // Update matrix with cell information
-             g.updateMatrix();
-        
-           // Get the edges between all the nodes
-           ArrayList<Edge> edges = g.getEdges();
-        
-           // Run Bellman Ford 
-           bellmanfordRunner b = new bellmanfordRunner();
-           b.runBellmanFordAlgorithm(edges, s.getID(), 35, e.getID());
-           bellmanfordRunner bell = new bellmanfordRunner();
-           bell.runBellmanFordAlgorithm(edges, source, n, end);
+          // Update matrix with cell information
+          g.updateMatrix();
+
+          // Get the edges between all the nodes
+          ArrayList<Edge> edges = g.getEdges();
+
+          // Run Bellman Ford
+          bellmanfordRunner b = new bellmanfordRunner();
+          b.runBellmanFordAlgorithm(edges, s.getID(), 35, e.getID());
+          bellmanfordRunner bell = new bellmanfordRunner();
+          bell.runBellmanFordAlgorithm(edges, source, n, end);
+          
         } else if(algorithm.equalsIgnoreCase("Bidirectional Search")){
             BidirectionalSearch bi = new BidirectionalSearch();
             bi.biDirectionalSearch(s, e, g);
@@ -84,8 +85,8 @@ public class Algorithms extends GUIWindow {
             d.dijkstra(graph, source, end);
 	    }
     }
-   
-    
+
+
 
     public static void main(String[] args){
 
@@ -97,9 +98,9 @@ public class Algorithms extends GUIWindow {
 
     /* public class mat{
     public static void main(String[] args) {
-      
+
       Node[][] array = new int[35][35];
-         
+
       state, id, row, column
       Node n0 = new Node("",0, 0, 0);
       Node n1 = new Node("",1, 0, 1);
@@ -136,8 +137,8 @@ public class Algorithms extends GUIWindow {
       Node n32 = new Node("",32, 4, 4);
       Node n33 = new Node("",33, 4, 5);
       Node n34 = new Node("",34, 4, 6);
-         
-         
+
+
       LinkedList<Node> list0 = new LinkedList<Node>();
          list0.add(n1);
          list0.add(n7);
@@ -385,9 +386,9 @@ public class Algorithms extends GUIWindow {
          list34.add(n26);
          list34.add(n27);
          list34.add(n33);
-         
-         
-         
+
+
+
       ArrayList<LinkedList<Node>> adjList = new ArrayList<LinkedList<Node>>();
          adjList.add(list0);
          adjList.add(list1);
@@ -433,7 +434,7 @@ public class Algorithms extends GUIWindow {
          array[4][0] = n4;
          array[5][0] = n5;
          array[6][0] = n6;
-         array[7][0] = n7; 
+         array[7][0] = n7;
          array[8][0] = n8;
          array[9][0] = n9;
          array[10][0] = n10;
@@ -461,7 +462,7 @@ public class Algorithms extends GUIWindow {
          array[32][0] = n32;
          array[33][0] = n33;
          array[34][0] = n34;
-                  
+
          array[0][1] = 35;
          array[1][1] = 36;
          array[2][1] = 37;
@@ -496,8 +497,8 @@ public class Algorithms extends GUIWindow {
          array[31][1] = 66;
          array[32][1] = 67;
          array[33][1] = 68;
-         array[34][1] = 69; 
-                  
+         array[34][1] = 69;
+
          array[0][2] = 70;
          array[1][2] = 71;
          array[2][2] = 72;
@@ -532,19 +533,19 @@ public class Algorithms extends GUIWindow {
          array[31][2] = 101;
          array[32][2] = 102;
          array[33][2] = 103;
-         array[34][2] = 104;    
-                  
-         System.out.print(array[34][0]); */     
-         
-         
+         array[34][2] = 104;
+
+         System.out.print(array[34][0]); */
+
+
         /* for (int i = 0; i < array.length; i++){
             for(int j = 0; j < array[i].length; j++){
                //System.out.print(array[34][0]);
-      
+
                System.out.println();
             }
          } */
-         
+
          /*
          Node n1 = new Node(0,0,"start");
          Node n2 = new Node(0, 0, "");
@@ -582,7 +583,7 @@ public class Algorithms extends GUIWindow {
          Node n34= new Node(0,0,"");
          Node n35= new Node(0, 0, "");
          */
-         
+
 //      }
-    
+
 // }
