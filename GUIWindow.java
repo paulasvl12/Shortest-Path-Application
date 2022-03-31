@@ -671,8 +671,7 @@ public class GUIWindow extends JPanel {
                     }
                     //get the algorithm selected
                     String algo = (String) dropdown_menu.getSelectedItem();
-                    Graph graphBellman = new Graph(adjList, cellArr);
-                   
+                   ArrayList<Edge> graphBellman = new ArrayList<Edge>();
                  
                     Algorithms a = new Algorithms();
                     a.start(algo, graphDijkstra, start.getID(), end.getID(), adjGraph, start, end, cellArr, 34, graphBellman);

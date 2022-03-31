@@ -57,13 +57,13 @@ public class Algorithms extends GUIWindow {
     // }
     
      public static void start(String algorithm, Node[][] graph, int source, int end, Graph g, Node s, Node e,
-                             ArrayList<Node> edges, int n, Graph gBell){
+                             ArrayList<Node> allCells, int n, ArrayList<Edge> edges){
         if(algorithm.equalsIgnoreCase("AStar") || algorithm.equalsIgnoreCase("Select Algorithm") ){
        //     AStar a = new AStar();
          //   a.AStar(source, end);
         } else if(algorithm.equalsIgnoreCase("BellmanFord")){
            bellmanfordRunner bell = new bellmanfordRunner();
-           bell.runBellmanFordAlgorithm(gBell, s, n, e);
+           bell.runBellmanFordAlgorithm(edges, source, n, end);
         } else if(algorithm.equalsIgnoreCase("Bidirectional Search")){
             BidirectionalSearch bi = new BidirectionalSearch();
             bi.biDirectionalSearch(s, e, g);
