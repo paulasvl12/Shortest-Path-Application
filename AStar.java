@@ -1,13 +1,7 @@
-//package com.ai.astar;
+
 
 import java.util.*;
 
-/**
- * A Star Algorithm
- *
- * @author Marcelo Surriabre
- * @version 2.1, 2017-02-23
- */
 public class AStar extends Graph {
     private static int DEFAULT_HV_COST = 2; // Horizontal - Vertical Cost
     private static int DEFAULT_DIAGONAL_COST = 3;
