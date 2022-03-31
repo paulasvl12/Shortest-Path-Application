@@ -8,12 +8,25 @@ public class Graph extends Node {
     Node[][] adjMatrix; // I added this for Dijkstra
     Set<Node> allNodes; //set of all nodes in the graph
     ArrayList<Node> nodeList; // Added for BellmanFord algorithm
-    //ArrayList<Edge> edgeList; // Added for BellmanFord algorithm
+    ArrayList<Edge> edgeList; // Added for BellmanFord algorithm
 
-    /*public Graph(LinkedList<Node> adj, Set<Node> s){
-      nodes = adj;
-      allNodes = s;
-     }*/
+   
+     
+     // Returns graph represented by its edges
+    public ArrayList<Edge> getEdges(){
+
+      ArrayList<Edge> edgeList = new ArrayList<Edge>();
+      // Traverse 2D weight matrix
+      for (int start = 0; start < this.matrix.length; start++){
+        for (int end = start; end < this.matrix[start].length; end++){
+          // Only add an edge if it has a weight (i.e. of not zero)
+          if(this.matrix[start][end] != 0){
+            edgeList.add( new Edge(start, end, this.matrix[start][end]));
+          }
+        }
+      }
+      return edgeList;
+    }
 
     public Graph(int[][] m)
     {
