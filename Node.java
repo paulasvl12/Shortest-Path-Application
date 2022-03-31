@@ -88,6 +88,10 @@ public class Node
              return distance;
            }
            
+           public void setDistance(int dis)
+           {
+            distance = dis;
+           }
            public boolean equals(Node n){
             if(this.visited == n.visited && this.state.equals(n.state))
                return true;

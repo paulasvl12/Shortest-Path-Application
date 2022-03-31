@@ -655,8 +655,12 @@ public class GUIWindow extends JPanel {
                 @Override
                 public void mousePressed(MouseEvent e) {
                     if(startCell && endCell){
+                    startButton.setEnabled(false);
+                  resizeButton.setEnabled(false);
+                  dropdown_menu.setEnabled(false);
                     Node start = null;
                     Node end = null;
+                    //get the start and end node
                     for(int i = 0; i < cellArr.size(); i++){
                         if(!cellArr.get(i).getState().equals("") && !cellArr.get(i).getState().equals("Obs")){
                              if(cellArr.get(i).getState().equals("Start")){
@@ -667,11 +671,16 @@ public class GUIWindow extends JPanel {
                              }
                         }
                     }
+                    //get the algorithm selected
+                    String algo = (String) dropdown_menu.getSelectedItem();
                     BreadthFirstSearch bfs = new BreadthFirstSearch();
                     bfs.traversal(start, end, adjGraph);
-                    //    Algorithms a = new Algorithms();
-                      //  a.start(String algorithm, Node[][] graph, int source, int end, Graph g, Node s, Node e,
+                    Algorithms a = new Algorithms();
+                    a.start(algo, graphDijkstra, start.getID(), end.getID(), adjGraph, start, end, cellArr, 34);
+                    
+                      //  a.start(String algorithm, Node[][] graph, int source, int end, Graph adjList, Node s, Node e,
                   //              ArrayList<Edge> edges, int n);
+                  
                     } else {
                         System.out.println("Select start and end points");
                     }
@@ -685,12 +694,23 @@ public class GUIWindow extends JPanel {
                 public void mousePressed(MouseEvent e) {
                  //reset dropdown menu
                  dropdown_menu.setSelectedIndex(0);
+                  dropdown_menu.setEnabled(true);
+                  //enable the start and resize buttons again
+                  startButton.setEnabled(true);
+                  resizeButton.setEnabled(true);
                  //reset the grid
                  window.remove(cells);
                  Grid cells2 = new Grid();
                  window.add(cells2);
 
                   //reset all points on the graph
+                    for(int i = 0; i < cellArr.size(); i++){
+                        cellArr.get(i).setState("");
+                        cellArr.get(i).setDistance(Integer.MAX_VALUE);
+                        cellArr.get(i).setPrev(null);
+                        cellArr.get(i).setNext(null);
+                        cellArr.get(i).setVisited(false);
+                    }
                   
                   //reset the counter start and end varibales
                   counter = 0;

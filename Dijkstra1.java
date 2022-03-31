@@ -69,7 +69,7 @@ public class Dijkstra1 extends Node{
     }
 
     public static void main(String[] args) {
-
+/*
         Node[][] graph = new Node[][] { { new Node(0, 0, "start"), new Node(2, 1, ""), new Node(2,2, ""), new Node(3, 3, ""), new Node(0, 4, "end") },
                                       { new Node(2, 5, ""), new Node(0, 6, ""), new Node(3, 7, ""), new Node(2, 8, ""), new Node(0, 9, "") },
                                       { new Node(2, 10, ""), new Node(3, 11, ""), new Node(0, 12, ""), new Node(2, 13, ""), new Node(0, 14, "")},
@@ -95,5 +95,6 @@ int destination=0;
 
         // Test cases : Out of Bounds exception thrown when given destination 5,6,7 --> write test case
         // that validates that the destination exists and isn't out of bounds
+   */
     }
 }
