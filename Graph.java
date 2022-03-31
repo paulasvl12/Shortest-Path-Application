@@ -12,8 +12,6 @@ public class Graph extends Node {
       this.weight = weight;
       this.node = node;
    }
-   
-
         
     public void addBranch(int weight, Node node){
          Graph newGraph = new Graph(weight, node);
