@@ -133,7 +133,7 @@ public class BreadthFirstSearch extends Node{
          }
       }
       }catch(IndexOutOfBoundsException exception){
-         System.out.println("Graph Invalid - Cannot traverse an empty graph");
+         System.out.println("Graph Invalid");
       }
    }
    

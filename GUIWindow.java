@@ -90,7 +90,7 @@ public class GUIWindow extends JPanel {
         return cellNumber;
     }
     
-    
+    /*
     
     //this method will be used to color the cell assoicated with it on the graph
     //input: the cell's id number
@@ -145,7 +145,7 @@ public class GUIWindow extends JPanel {
           g2d.fillRect(x,y,30,30);
         }
         
-    }
+    }*/
     
    public static void main(String[] args) {
         
@@ -672,9 +672,9 @@ public class GUIWindow extends JPanel {
                     //get the algorithm selected
                     String algo = (String) dropdown_menu.getSelectedItem();
                    Algorithms a = new Algorithms();
+                   //drop-down selection, graph for Dijkstra, start node id, end node id, graph that hold adj list, start node, end node, arraylist of all the node, and size of graph
                     a.start(algo, graphDijkstra, start.getID(), end.getID(), adjGraph, start, end, cellArr, 34);
                     
-                  
                     } else {
                         System.out.println("Select start and end points");
                     }
@@ -694,9 +694,6 @@ public class GUIWindow extends JPanel {
            startButton.setEnabled(true);
            resizeButton.setEnabled(true);
          //reset the grid
-        
-
-         //reset all points on the graph
                   
          //reset the counter start and end varibales
          counter = 0;
@@ -727,11 +724,11 @@ public class GUIWindow extends JPanel {
       //instructions.setAlignment(Pos.NORTH);
       window.add(instructions, BorderLayout.EAST);
 
-
+      //not working currently
       resizeButton.addMouseListener(new MouseAdapter() {
          @Override
          public void mousePressed(MouseEvent e) {
-            System.out.println("hey");
+            
             window.remove(cells);
 
             GridResized gridResized = new GridResized();
