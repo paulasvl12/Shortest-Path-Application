@@ -699,9 +699,7 @@ public class GUIWindow extends JPanel {
                   startButton.setEnabled(true);
                   resizeButton.setEnabled(true);
                  //reset the grid
-                 window.remove(cells);
-                 Grid cells2 = new Grid();
-                 window.add(cells2);
+                
 
                   //reset all points on the graph
                     for(int i = 0; i < cellArr.size(); i++){
