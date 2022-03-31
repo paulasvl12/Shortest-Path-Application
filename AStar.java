@@ -206,7 +206,7 @@ public class AStar extends Graph {
     }
     
     public static void main(String[] args) {
-
+        try {
         int[][] test1Matrix = {
                   {0, 2, 0, 2, 3, 0, 0, 0, 0},
                   {2, 0, 2, 3, 2, 3, 0, 0, 0},
@@ -235,6 +235,10 @@ public class AStar extends Graph {
                      System.out.println(node);                
                }
                 
-       }
+       }catch (Exception e) {
+         System.out.println("Something went wrong");
+       
+    }
+    }
 
 }
