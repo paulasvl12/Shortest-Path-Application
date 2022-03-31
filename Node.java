@@ -8,6 +8,7 @@ public class Node implements Comparable<Node>
            private String gridCoor; //how we will connect it to our visual represenation
            private Integer distance; //used for dijstar and other weighted graphs
            public int id; //number associated with the matrix?
+<<<<<<< Updated upstream
            private static int idCounter = 0;
            public Node parent = null;
            public double f = Double.MAX_VALUE;
@@ -19,6 +20,9 @@ public class Node implements Comparable<Node>
                this.h = h;
                this.id = idCounter++;
            }
+=======
+           
+>>>>>>> Stashed changes
             
       	  public Node()
       	  {
@@ -82,6 +86,7 @@ public class Node implements Comparable<Node>
             prev = n;
            }
 
+<<<<<<< Updated upstream
            public int compareTo(Node n) {
                return Double.compare(this.f, n.f);
            }
@@ -98,16 +103,21 @@ public class Node implements Comparable<Node>
                parent = n;
            }
 
+=======
+>>>>>>> Stashed changes
            public boolean equals(Node n){
             if(this.visited == n.visited && this.state.equals(n.state) && this.gridCoor.equals(n.gridCoor))
                return true;
             else
                return false;
            }
+<<<<<<< Updated upstream
            
            public void addBranch(int weight, Node node){
                Graph newGraph = new Graph(weight, node);
                          
           }
+=======
+>>>>>>> Stashed changes
 
 }
