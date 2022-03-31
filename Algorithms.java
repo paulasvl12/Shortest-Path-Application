@@ -55,6 +55,26 @@ public class Algorithms extends GUIWindow {
     //         d.dijkstra(graph, source, end);
     //     }
     // }
+    
+     public static void start(String algorithm, Node[][] graph, int source, int end, Graph g, Node s, Node e,
+                             ArrayList<Node> edges, int n, Graph gBell){
+        if(algorithm.equalsIgnoreCase("AStar") || algorithm.equalsIgnoreCase("Select Algorithm") ){
+       //     AStar a = new AStar();
+         //   a.AStar(source, end);
+        } else if(algorithm.equalsIgnoreCase("BellmanFord")){
+           bellmanfordRunner bell = new bellmanfordRunner();
+           bell.runBellmanFordAlgorithm(gBell, s, n, e);
+        } else if(algorithm.equalsIgnoreCase("Bidirectional Search")){
+            BidirectionalSearch bi = new BidirectionalSearch();
+            bi.biDirectionalSearch(s, e, g);
+        } else if(algorithm.equalsIgnoreCase("Breadth-First Search")){
+            BreadthFirstSearch b = new BreadthFirstSearch();
+            b.traversal(s, e, g);
+        } else if(algorithm.equalsIgnoreCase("Dijkstra")){
+            Dijkstra1 d = new Dijkstra1();
+            d.dijkstra(graph, source, end);
+	    }
+    }
    
     // Testing Bellman Ford Algorithm
     public static void runBellmanFord(Graph g, Node start, Node end){

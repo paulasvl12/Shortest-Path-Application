@@ -509,7 +509,11 @@ public class GUIWindow extends JPanel {
          adjList.add(list34);
 
          Graph adjGraph = new Graph(adjList, cellArr);
-        
+        Node[][] graphDijkstra = new Node[][] {   { n0, n1, n2, n3, n4, n5, n6 },
+                                                        {n7, n8, n9, n10, n11, n12, n13 },
+                                                        { n14, n15, n16, n17, n18, n19, n20},
+                                                        { n21, n22, n23, n24, n25, n26, n27 },
+                                                        { n28, n29, n30, n31, n32, n33, n34 } };
         
          JFrame window = new JFrame("Shortest Path Application");
          window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //end the program when closed
@@ -645,8 +649,6 @@ public class GUIWindow extends JPanel {
             }
       });
 
-            
-<<<<<<< HEAD
              startButton.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mousePressed(MouseEvent e) {
@@ -669,9 +671,11 @@ public class GUIWindow extends JPanel {
                     }
                     //get the algorithm selected
                     String algo = (String) dropdown_menu.getSelectedItem();
+                    Graph graphBellman = new Graph(adjList, cellArr);
+                   
                  
                     Algorithms a = new Algorithms();
-                    a.start(algo, graphDijkstra, start.getID(), end.getID(), adjGraph, start, end, cellArr, 34);
+                    a.start(algo, graphDijkstra, start.getID(), end.getID(), adjGraph, start, end, cellArr, 34, graphBellman);
                     
                   
                     } else {
@@ -680,42 +684,8 @@ public class GUIWindow extends JPanel {
 
                 }
             });
-=======
-      startButton.addMouseListener(new MouseAdapter() {
-         @Override
-         public void mousePressed(MouseEvent e) {
-            if(startCell && endCell){
-            Node start = null;
-            Node end = null;
-            for(int i = 0; i < cellArr.size(); i++){
-               if(!cellArr.get(i).getState().equals("") && !cellArr.get(i).getState().equals("Obs")){
-                  if(cellArr.get(i).getState().equals("Start")){
-                     start = cellArr.get(i);
-                  }
-                  else {
-                     end = cellArr.get(i);
-                  }
-               }
-            }
-                    
-            Graph graph = new Graph(adjList, cellArr);
-            Algorithms a = new Algorithms();
-            a.runBellmanFord(graph, start, end);
-                    
-            // BreadthFirstSearch bfs = new BreadthFirstSearch();
-            // bfs.traversal(start, end, adjGraph);
-            // Algorithms a = new Algorithms();
-            // a.start(String algorithm, Node[][] graph, int source, int end, Graph g, Node s, Node e,
-            // ArrayList<Edge> edges, int n);
-            } 
-            else {
-               System.out.println("Select start and end points");
-            }
 
-         }
-      });
->>>>>>> cd1fe5a8e8cc3d8e07f28d0eccaad63992c0fc72
-            
+              
       //did they click the reset button
       resetButton.addMouseListener(new MouseAdapter() {
          @Override
