@@ -5,6 +5,10 @@ import java.util.PriorityQueue;
 
 public class AStar extends Graph {
 
+   public AStar(int h, Node n){
+      super(h, n);
+   }
+   
     public static Node AStar(Node start, Node target){
         PriorityQueue<Node> closedList = new PriorityQueue<>();
         PriorityQueue<Node> openList = new PriorityQueue<>();
