@@ -47,7 +47,9 @@ public class BidirectionalSearch extends Node {
             }
 
             System.out.print("");
-            this.print(SList, EList, intersectNode);
+            if(SList != null){
+               this.print(SList, EList, intersectNode);
+            }
     }
 
 
