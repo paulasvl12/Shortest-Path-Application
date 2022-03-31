@@ -115,15 +115,15 @@ public class BidirectionalSearch extends Node {
         {
             if(a.get(i).getID() == intersectNode.getID() || b.get(i).getID() == intersectNode.getID())
             {
-                System.out.print(a.get(i).getID());
+                System.out.print(a.get(i).getID() + " ");
                 if(b.size() %2 == 0)
                 {
-                    System.out.print(b.get(i).getID());
+                    System.out.print(b.get(i).getID() + " ");
                 }
                 break;
             }
-            System.out.print(a.get(i).getID());
-            System.out.print(b.get(i).getID());
+            System.out.print(a.get(i).getID() + " ");
+            System.out.print(b.get(i).getID() + " ");
         }
     }
 
