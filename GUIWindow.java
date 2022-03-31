@@ -673,13 +673,10 @@ public class GUIWindow extends JPanel {
                     }
                     //get the algorithm selected
                     String algo = (String) dropdown_menu.getSelectedItem();
-                    BreadthFirstSearch bfs = new BreadthFirstSearch();
-                    bfs.traversal(start, end, adjGraph);
+                 
                     Algorithms a = new Algorithms();
                     a.start(algo, graphDijkstra, start.getID(), end.getID(), adjGraph, start, end, cellArr, 34);
                     
-                      //  a.start(String algorithm, Node[][] graph, int source, int end, Graph adjList, Node s, Node e,
-                  //              ArrayList<Edge> edges, int n);
                   
                     } else {
                         System.out.println("Select start and end points");

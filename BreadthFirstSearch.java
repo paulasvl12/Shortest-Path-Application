@@ -62,7 +62,7 @@ public class BreadthFirstSearch extends Node{
    //traverse the path
    public void traversal(Node s, Node e, Graph g){
    //run through all options and return a path
-   
+   System.out.println("here");
    //present graph in 2d array
    
       //make a queue to store data
