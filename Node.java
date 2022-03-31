@@ -113,14 +113,5 @@ public class Node implements Comparable<Node>
            public int compareTo(Node n){
                return Double.compare(this.f, n.f);
            }
-           
-           public void addBranch(int weight, Node node){
-               Graph newGraph = new Graph(weight, node);
-               neighbors.add(newGraph);
-                         
-          }
-          
-          public double calculateHeuristic(Node target){
-            return this.h;
-          }
+   
 }
