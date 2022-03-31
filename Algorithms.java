@@ -57,11 +57,20 @@ public class Algorithms extends GUIWindow {
     // }
     
      public static void start(String algorithm, Node[][] graph, int source, int end, Graph g, Node s, Node e,
-                             ArrayList<Node> allCells, int n, ArrayList<Edge> edges){
+                             ArrayList<Node> allCells, int n){
         if(algorithm.equalsIgnoreCase("AStar") || algorithm.equalsIgnoreCase("Select Algorithm") ){
        //     AStar a = new AStar();
          //   a.AStar(source, end);
         } else if(algorithm.equalsIgnoreCase("BellmanFord")){
+            // Update matrix with cell information
+             g.updateMatrix();
+        
+           // Get the edges between all the nodes
+           ArrayList<Edge> edges = g.getEdges();
+        
+           // Run Bellman Ford 
+           bellmanfordRunner b = new bellmanfordRunner();
+           b.runBellmanFordAlgorithm(edges, s.getID(), 35, e.getID());
            bellmanfordRunner bell = new bellmanfordRunner();
            bell.runBellmanFordAlgorithm(edges, source, n, end);
         } else if(algorithm.equalsIgnoreCase("Bidirectional Search")){
@@ -76,19 +85,7 @@ public class Algorithms extends GUIWindow {
 	    }
     }
    
-    // Testing Bellman Ford Algorithm
-    public static void runBellmanFord(Graph g, Node start, Node end){
     
-        // Update matrix with cell information
-        g.updateMatrix();
-        
-        // Get the edges between all the nodes
-        ArrayList<Edge> edges = g.getEdges();
-        
-        // Run Bellman Ford 
-        bellmanfordRunner b = new bellmanfordRunner();
-        b.runBellmanFordAlgorithm(edges, start.getID(), 35, end.getID());
-    }
 
     public static void main(String[] args){
 
