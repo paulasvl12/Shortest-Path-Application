@@ -14,7 +14,68 @@ public class Node {
      private String state; //start end or obstacle "Start" "End" "Obs" 
      private int distance; //used for dijstar and other weighted graphs
      private int id; //number associated with the matrix?
+    public final Map<Node, Integer> neighbours = new HashMap<>();
+    // Member variables of this class
+    public int node;
+    public int cost;
 
+    public static ArrayList<Integer> shortestPath = new ArrayList<>();
+    public Map<Integer, Node> graph = new HashMap<>();
+    public Node previous = null;
+    public int start;
+    public int end;
+    public int distance; //used for dijstar and other weighted graphs
+    public int id; //number associated with the matrix?
+
+    //Dijkstra
+    public Node(int id)
+    {
+        id = id;
+    }
+
+    public void printPath()
+    {
+        if (this == this.previous)
+        {
+            System.out.printf("%s", this.id);
+        }
+        else if (this.previous == null)
+        {
+            System.out.printf("%s(unreached)", this.id);
+        }
+        else
+        {
+            this.previous.printPath();
+            if(!shortestPath.contains(new Integer(start))){
+                shortestPath.add(new Integer(start));
+            }
+            shortestPath.add(new Integer(this.id));
+            System.out.printf(" -> %s(%d)", this.id, this.distance);
+            for(int i=0; i < shortestPath.size(); i++){
+                System.out.print(shortestPath.get(i) + "\t");
+            }
+
+        }
+    }
+
+
+    public int compareTo(Node other)
+
+    {
+
+        if (distance == other.distance) {
+            if (id == other.id) {
+                return 0;
+            } else if(id < other.id){
+                return -1;
+            } else if(id > other.id){
+                return 1;
+            }
+            //    return id.compareTo((Integer)other.id); }
+        }
+        return Integer.compare(distance, other.distance);
+    }
+// End of Dijkstra
 
     public void calculateHeuristic(Node finalNode) {
         this.h = Math.abs(finalNode.getRow() - getRow()) + Math.abs(finalNode.getCol() - getCol());
